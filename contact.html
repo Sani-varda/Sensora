@@ -326,10 +326,11 @@
             <span>Hyderabad, India</span>
           </li>
         </ul>
-        <div class="cs-height_0 cs-height_lg_50"></div>
-      </div>
-      <div class="col-lg-6">
-        <form id="contact-form" action="http://localhost:8000/api/v1/webhooks/form" method="POST" class="row">
+        <form id="contact-form" action="https://poor-quebec-westminster-grades.trycloudflare.com/api/v1/webhooks/form"
+          method="POST" class="row">
+          <input type="hidden" name="_subject" value="New Submission from MoonLIT Arc">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="col-sm-6">
             <label class="cs-primary_color">Full Name*</label>
             <input type="text" class="cs-form_field" name="name" required>
