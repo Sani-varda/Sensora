@@ -298,13 +298,7 @@
             <span>Hyderabad, India</span>
           </li>
         </ul>
-        <form id="contact-form" action="https://formsubmit.co/imsunnystark@gmail.com" method="POST" class="row">
-          <!-- Optional: Can be type="hidden" or type="text" for subject -->
-          <input type="hidden" name="_subject" value="New Submission from MoonLIT Arc">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_webhook"
-            value="https://graphics-advertisements-firewall-diabetes.trycloudflare.com/api/v1/webhooks/form">
+        <form id="contact-form" action="/api/contact" method="POST" class="row">
 
           <div class="col-sm-6">
             <label class="cs-primary_color">Full Name*</label>
@@ -350,13 +344,6 @@
             const form = e.target;
             const btn = document.getElementById('submit-btn');
             const result = document.getElementById('form-result');
-
-            if (window.location.protocol === 'file:') {
-              result.style.display = 'block';
-              result.style.color = '#ff4d4d';
-              result.innerHTML = '<strong>Error:</strong> FormSubmit requires a web server to work. Please open this page via <code>http://localhost</code> or <code>127.0.0.1</code> (e.g., using "Live Server" in VS Code or <code>python -m http.server</code>).';
-              return;
-            }
 
             btn.disabled = true;
             btn.querySelector('span').innerText = 'Sending...';
