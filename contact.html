@@ -326,14 +326,15 @@
             <span>Hyderabad, India</span>
           </li>
         </ul>
-        <form id="contact-form" action="https://poor-quebec-westminster-grades.trycloudflare.com/api/v1/webhooks/form"
-          method="POST" class="row">
+        <form id="contact-form" action="https://formsubmit.co/imsunnystark@gmail.com" method="POST" class="row">
+          <!-- Optional: Can be type="hidden" or type="text" for subject -->
           <input type="hidden" name="_subject" value="New Submission from MoonLIT Arc">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+
           <div class="col-sm-6">
             <label class="cs-primary_color">Full Name*</label>
-            <input type="text" class="cs-form_field" name="name" required>
+            <input type="text" class="cs-form_field" name="full-name" required>
             <div class="cs-height_20 cs-height_lg_20"></div>
           </div>
           <div class="col-sm-6">
@@ -343,12 +344,12 @@
           </div>
           <div class="col-sm-6">
             <label class="cs-primary_color">Project Type*</label>
-            <input type="text" class="cs-form_field" name="industry" required>
+            <input type="text" class="cs-form_field" name="project" required>
             <div class="cs-height_20 cs-height_lg_20"></div>
           </div>
           <div class="col-sm-6">
             <label class="cs-primary_color">Mobile*</label>
-            <input type="text" class="cs-form_field" name="phone" required>
+            <input type="text" class="cs-form_field" name="number" required>
             <div class="cs-height_20 cs-height_lg_20"></div>
           </div>
           <div class="col-lg-12">
@@ -376,36 +377,43 @@
             const btn = document.getElementById('submit-btn');
             const result = document.getElementById('form-result');
 
+            if (window.location.protocol === 'file:') {
+              result.style.display = 'block';
+              result.style.color = '#ff4d4d';
+              result.innerHTML = '<strong>Error:</strong> FormSubmit requires a web server to work. Please open this page via <code>http://localhost</code> or <code>127.0.0.1</code> (e.g., using "Live Server" in VS Code or <code>python -m http.server</code>).';
+              return;
+            }
+
             btn.disabled = true;
             btn.querySelector('span').innerText = 'Sending...';
             result.style.display = 'block';
             result.style.color = '#1034A6';
             result.innerHTML = 'Processing your message...';
 
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
             fetch(form.action, {
               method: 'POST',
+              body: new FormData(form),
               headers: {
-                'Content-Type': 'application/json',
                 'Accept': 'application/json'
-              },
-              body: JSON.stringify(data)
+              }
             }).then(response => {
               if (response.ok) {
                 result.style.color = '#28a745';
-                result.innerHTML = 'Thank you! Your message has been sent successfully. Check your email for next steps.';
+                result.innerHTML = 'Thank you! Your message has been sent successfully.';
                 form.reset();
               } else {
-                return response.json().then(data => {
-                  throw new Error(data.detail || 'Form submission failed');
-                });
+                response.json().then(data => {
+                  result.style.color = '#ff4d4d';
+                  if (Object.hasOwn(data, 'errors')) {
+                    result.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                  } else {
+                    result.innerHTML = 'Oops! There was a problem submitting your form. Please try again.';
+                  }
+                })
               }
             }).catch(error => {
-              console.error('Error:', error);
               result.style.color = '#ff4d4d';
-              result.innerHTML = 'Oops! There was a problem sending your message. Please ensure the backend server is running.';
+              result.innerHTML = 'Oops! There was a problem sending your message. Check your connection and try again.';
             }).finally(() => {
               btn.disabled = false;
               btn.querySelector('span').innerText = 'Send Message';
