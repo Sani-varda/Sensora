@@ -80,7 +80,8 @@ class handler(BaseHTTPRequestHandler):
         
         # Parse data (handling both JSON and Form Encoded)
         try:
-            if self.headers.get('Content-Type') == 'application/json':
+            content_type = self.headers.get('Content-Type', '')
+            if 'application/json' in content_type:
                 data = json.loads(post_data)
             else:
                 data = {k: v[0] for k, v in parse_qs(post_data).items()}
