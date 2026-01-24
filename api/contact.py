@@ -22,8 +22,8 @@ EMAIL_TEMPLATE = """
     <title>Welcome to MoonLIT Arc</title>
     <style>
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-        .header { background-color: #1034A6; color: #ffffff; padding: 40px 20px; text-align: center; }
+        .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0; }
+        .header { background-color: #ffffff; color: #333; padding: 40px 20px; text-align: center; border-bottom: 3px solid #1034A6; }
         .logo { max-width: 150px; margin-bottom: 10px; }
         .header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; display: none; }
         .content { padding: 40px 30px; }
@@ -41,7 +41,7 @@ EMAIL_TEMPLATE = """
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://moon-lit-arc.vercel.app/assets/img/logo.svg" alt="MoonLIT Arc" class="logo" style="filter: brightness(0) invert(1);">
+            <img src="https://moon-lit-arc.vercel.app/assets/img/logo_email.svg" alt="MoonLIT Arc" class="logo">
             <h1>MoonLIT Arc</h1>
         </div>
         <div class="content">
