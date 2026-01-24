@@ -45,6 +45,12 @@
   <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css">
   <link rel="stylesheet" href="assets/css/plugins/animate.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>function initApollo() {
+      var n = Math.random().toString(36).substring(7), o = document.createElement("script");
+      o.src = "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=" + n, o.async = !0, o.defer = !0,
+        o.onload = function () { window.trackingFunctions.onLoad({ appId: "69470d8cfab3780011720978" }) },
+        document.head.appendChild(o)
+    } initApollo();</script>
 </head>
 
 <body>
@@ -365,8 +371,10 @@
               } else {
                 response.json().then(data => {
                   result.style.color = '#ff4d4d';
-                  if (Object.hasOwn(data, 'errors')) {
-                    result.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                  if (data && data.errors) {
+                    result.innerHTML = data.errors.map(error => error.message).join(", ");
+                  } else if (data && data.detail) {
+                    result.innerHTML = data.detail;
                   } else {
                     result.innerHTML = 'Oops! There was a problem submitting your form. Please try again.';
                   }
