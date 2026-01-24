@@ -23,15 +23,17 @@ EMAIL_TEMPLATE = """
     <style>
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
         .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-        .header { background-color: #000000; color: #ffffff; padding: 40px 20px; text-align: center; }
-        .header h1 { margin: 0; font-size: 28px; letter-spacing: 1px; text-transform: uppercase; }
-        .header p { margin: 10px 0 0 0; font-size: 14px; opacity: 0.9; font-style: italic; }
+        .header { background-color: #1034A6; color: #ffffff; padding: 40px 20px; text-align: center; }
+        .logo { max-width: 150px; margin-bottom: 10px; }
+        .header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; display: none; }
         .content { padding: 40px 30px; }
         .section { margin-bottom: 30px; }
         .h-accent { color: #1034A6; font-size: 20px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        .service-item { margin-bottom: 15px; padding-left: 15px; border-left: 3px solid #1034A6; }
-        .service-title { font-weight: bold; display: block; margin-bottom: 4px; }
-        .button { display: inline_block; padding: 16px 32px; background-color: #1034A6; color: white !important; text-decoration: none; border-radius: 6px; font-weight: bold; text-align: center; font-size: 16px; transition: background-color 0.3s; }
+        .service-item { margin-bottom: 15px; padding-left: 15px; border-left: 4px solid #1034A6; background-color: #f8fbfd; padding: 10px 15px; border-radius: 0 4px 4px 0; }
+        .service-title { font-weight: bold; display: block; margin-bottom: 4px; color: #1034A6; }
+        .button-container { text-align: center; margin-top: 30px; margin-bottom: 30px; }
+        .button { display: inline-block; padding: 16px 32px; background-color: #1034A6; color: #ffffff !important; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; font-size: 16px; transition: background-color 0.3s; box-shadow: 0 4px 15px rgba(16, 52, 166, 0.3); }
+        .button:hover { background-color: #0d2b8a; }
         .footer { background-color: #f9f9f9; padding: 25px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #eee; }
         .footer a { color: #1034A6; text-decoration: none; }
     </style>
@@ -39,8 +41,8 @@ EMAIL_TEMPLATE = """
 <body>
     <div class="container">
         <div class="header">
+            <img src="https://moon-lit-arc.vercel.app/assets/img/logo.svg" alt="MoonLIT Arc" class="logo" style="filter: brightness(0) invert(1);">
             <h1>MoonLIT Arc</h1>
-            <p>Illuminating Your Path to AI-Powered Growth</p>
         </div>
         <div class="content">
             <div class="section">
@@ -58,15 +60,14 @@ EMAIL_TEMPLATE = """
                 <div class="service-item"><span class="service-title">Web Development</span>High-converting landing pages and fully functional, SEO-optimized websites.</div>
                 <div class="service-item"><span class="service-title">Digital Advertising</span>Data-driven Google & Meta advertising campaigns.</div>
             </div>
-            <div class="section" style="text-align: center; margin-top: 40px; background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
-                <h3 style="margin-top: 0;">Ready to Transform Your Business?</h3>
-                <p style="margin-bottom: 25px;">Let's discuss your specific challenges in a no-pressure strategy call.</p>
+            <div class="button-container">
+                <p style="margin-bottom: 25px;">Ready to transform your business? Let's discuss your project.</p>
                 <a href="{{ calendly_link }}" class="button">Schedule Free Consultation</a>
             </div>
         </div>
         <div class="footer">
             <p>&copy; 2026 MoonLIT Arc. All rights reserved.</p>
-            <p><a href="https://moon-lit-arc.vercel.app">Website</a></p>
+            <p><a href="https://moon-lit-arc.vercel.app">Visit Website</a> | <a href="mailto:imsunnystark@gmail.com">Contact Support</a></p>
         </div>
     </div>
 </body>
