@@ -21,53 +21,66 @@ EMAIL_TEMPLATE = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to MoonLIT Arc</title>
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0; }
-        .header { background-color: #ffffff; color: #333; padding: 40px 20px; text-align: center; border-bottom: 3px solid #1034A6; }
-        .logo { max-width: 150px; margin-bottom: 10px; }
-        .header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; display: none; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f2f5; }
+        .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border: 1px solid #e1e4e8; }
+        .header { background: linear-gradient(135deg, #1034A6 0%, #0a2375 100%); color: #ffffff; padding: 50px 30px; text-align: center; }
+        .header h1 { margin: 0; font-size: 32px; letter-spacing: 1px; font-weight: 700; margin-bottom: 10px; }
+        .header p { margin: 0; font-size: 16px; opacity: 0.9; font-weight: 300; }
         .content { padding: 40px 30px; }
-        .section { margin-bottom: 30px; }
-        .h-accent { color: #1034A6; font-size: 20px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        .service-item { margin-bottom: 15px; padding-left: 15px; border-left: 4px solid #1034A6; background-color: #f8fbfd; padding: 10px 15px; border-radius: 0 4px 4px 0; }
-        .service-title { font-weight: bold; display: block; margin-bottom: 4px; color: #1034A6; }
-        .button-container { text-align: center; margin-top: 30px; margin-bottom: 30px; }
-        .button { display: inline-block; padding: 16px 32px; background-color: #1034A6; color: #ffffff !important; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; font-size: 16px; transition: background-color 0.3s; box-shadow: 0 4px 15px rgba(16, 52, 166, 0.3); }
-        .button:hover { background-color: #0d2b8a; }
-        .footer { background-color: #f9f9f9; padding: 25px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #eee; }
-        .footer a { color: #1034A6; text-decoration: none; }
+        .section { margin-bottom: 35px; }
+        .h-accent { color: #1034A6; font-size: 22px; font-weight: 600; margin-bottom: 15px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
+        .highlight-box { background-color: #f8fbfd; border-radius: 8px; padding: 25px; border-left: 5px solid #1034A6; margin-bottom: 30px; }
+        .service-list { list-style: none; padding: 0; margin: 0; }
+        .service-item { display: flex; margin-bottom: 15px; align-items: flex-start; }
+        .check-icon { color: #1034A6; margin-right: 12px; font-weight: bold; font-size: 18px; }
+        .button-container { text-align: center; margin-top: 40px; margin-bottom: 20px; }
+        .button { display: inline-block; padding: 18px 36px; background-color: #1034A6; color: #ffffff !important; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; font-size: 16px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(16, 52, 166, 0.3); }
+        .button:hover { background-color: #0d2b8a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 52, 166, 0.4); }
+        .footer { background-color: #f9f9f9; padding: 30px; text-align: center; font-size: 13px; color: #666; border-top: 1px solid #eee; }
+        .footer a { color: #1034A6; text-decoration: none; font-weight: 500; }
+        strong { color: #1034A6; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://moon-lit-arc.vercel.app/assets/img/logo_email.svg" alt="MoonLIT Arc" class="logo">
             <h1>MoonLIT Arc</h1>
+            <p>Illuminating Your Path to Automation</p>
         </div>
         <div class="content">
             <div class="section">
                 <h2>Hello {{ name }},</h2>
-                <p>Thank you for reaching out to us. We are thrilled to welcome you to the future of business automation.</p>
-                <p>We have received your inquiry regarding <strong>{{ industry }}</strong> solutions, and our team is already reviewing your requirements.</p>
+                <p>Thank you for choosing MoonLIT Arc. We have successfully received your inquiry regarding <strong>{{ industry }}</strong> solutions.</p>
+                <p>You’ve taken the first step towards transforming your business operations. Our team is currently reviewing your details to tailor a strategy that aligns with your goals.</p>
             </div>
+            
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #1034A6;">What Happens Next?</h3>
+                <p style="margin-bottom: 0;">1. <strong>Analysis:</strong> We analyze your requirements against our AI frameworks.<br>
+                2. <strong>Strategy:</strong> We identify the highest-ROI automation opportunities for you.<br>
+                3. <strong>Connect:</strong> A specialist will reach out within 24 hours to schedule a deep-dive.</p>
+            </div>
+
             <div class="section">
-                <h3 class="h-accent">Who We Are</h3>
-                <p>MoonLIT Arc is a cutting-edge AI Automation Agency dedicated to bridging the gap between emerging AI technology and real-world business applications. We help companies eliminate inefficiencies, scale operations, and unlock unprecedented growth potential.</p>
+                <h3 class="h-accent">Our Comprehensive Solutions</h3>
+                <p>We don't just build software; we build autonomous systems that drive revenue.</p>
+                <ul class="service-list">
+                    <li class="service-item"><span class="check-icon">✓</span><div><strong>AI Voice & Chat Agents:</strong> Automate customer support and sales availability 24/7.</div></li>
+                    <li class="service-item"><span class="check-icon">✓</span><div><strong>Intelligent Workflows:</strong> Streamline operations and remove manual bottlenecks.</div></li>
+                    <li class="service-item"><span class="check-icon">✓</span><div><strong>High-Performance Web:</strong> SEO-optimized, blazing fast web applications.</div></li>
+                    <li class="service-item"><span class="check-icon">✓</span><div><strong>Data-Driven Ads:</strong> Precision targeting on Google & Meta platforms.</div></li>
+                </ul>
             </div>
-            <div class="section">
-                <h3 class="h-accent">How We Can Help</h3>
-                <div class="service-item"><span class="service-title">AI Automation Solutions</span>Chat Agents, Voice Agents, Email Automation, and Custom Workflow Automation.</div>
-                <div class="service-item"><span class="service-title">Web Development</span>High-converting landing pages and fully functional, SEO-optimized websites.</div>
-                <div class="service-item"><span class="service-title">Digital Advertising</span>Data-driven Google & Meta advertising campaigns.</div>
-            </div>
+
             <div class="button-container">
-                <p style="margin-bottom: 25px;">Ready to transform your business? Let's discuss your project.</p>
-                <a href="{{ calendly_link }}" class="button">Schedule Free Consultation</a>
+                <p style="margin-bottom: 25px;">Don't want to wait? Fast-track your process now.</p>
+                <a href="{{ calendly_link }}" class="button">Schedule Priority Consultation</a>
             </div>
         </div>
         <div class="footer">
             <p>&copy; 2026 MoonLIT Arc. All rights reserved.</p>
-            <p><a href="https://moon-lit-arc.vercel.app">Visit Website</a> | <a href="mailto:imsunnystark@gmail.com">Contact Support</a></p>
+            <p>Hyderabad, India | +91 70216 28334</p>
+            <p style="margin-top: 10px;"><a href="https://moonlitarc.vercel.app">Visit Our Website</a> | <a href="mailto:imsunnystark@gmail.com">Email Support</a></p>
         </div>
     </div>
 </body>
