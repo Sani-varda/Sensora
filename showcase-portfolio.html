@@ -446,19 +446,16 @@
   <script src="assets/js/plugins/gsap.min.js"></script>
   <script src="assets/js/plugins/swiper.min.js"></script>
   <script src="assets/js/main.js"></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69763534944bf7197b43238a/1jfqrvlro';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+<!--Start of n8n Chat Script-->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'http://localhost:5678/webhook/5ba59688-7c58-4909-8e06-9d6dad4a2fce/chat'
+	});
 </script>
-<!--End of Tawk.to Script-->
+<!--End of n8n Chat Script-->
 </body>
 
 </html>
