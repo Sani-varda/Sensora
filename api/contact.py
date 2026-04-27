@@ -11,7 +11,7 @@ from jinja2 import Template
 SENDER_EMAIL = "imsunnystark@gmail.com"
 APP_PASSWORD = "uoxd hdix lwqf ttfg"
 CALENDLY_LINK = "https://calendly.com/imsunnystark/30min"
-DISPLAY_NAME = "Sani | MoonLIT Arc"
+DISPLAY_NAME = "Sani | ML Arc - AI Software Agency"
 
 EMAIL_TEMPLATE = """
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ EMAIL_TEMPLATE = """
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to MoonLIT Arc</title>
+    <title>Welcome to ML Arc - AI Software Agency</title>
     <style>
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f2f5; }
         .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border: 1px solid #e1e4e8; }
@@ -44,13 +44,13 @@ EMAIL_TEMPLATE = """
 <body>
     <div class="container">
         <div class="header">
-            <h1>MoonLIT Arc</h1>
+            <h1>ML Arc - AI Software Agency</h1>
             <p>Illuminating Your Path to Automation</p>
         </div>
         <div class="content">
             <div class="section">
                 <h2>Hello {{ name }},</h2>
-                <p>Thank you for choosing MoonLIT Arc. We have successfully received your inquiry regarding <strong>{{ industry }}</strong> solutions.</p>
+                <p>Thank you for choosing ML Arc - AI Software Agency. We have successfully received your inquiry regarding <strong>{{ industry }}</strong> solutions.</p>
                 <p>You’ve taken the first step towards transforming your business operations. Our team is currently reviewing your details to tailor a strategy that aligns with your goals.</p>
             </div>
             
@@ -78,7 +78,7 @@ EMAIL_TEMPLATE = """
             </div>
         </div>
         <div class="footer">
-            <p>&copy; 2026 MoonLIT Arc. All rights reserved.</p>
+            <p>&copy; 2026 ML Arc - AI Software Agency. All rights reserved.</p>
             <p>Hyderabad, India | +91 70216 28334</p>
             <p style="margin-top: 10px;"><a href="https://moonlitarc.vercel.app">Visit Our Website</a> | <a href="mailto:imsunnystark@gmail.com">Email Support</a></p>
         </div>
@@ -121,7 +121,7 @@ class handler(BaseHTTPRequestHandler):
             # 1. Send Welcome Email to Lead
             self.send_email_smtp(
                 to_email=email,
-                subject="Welcome to MoonLIT Arc - Your AI Transformation Starts Here",
+                subject="Welcome to ML Arc - AI Software Agency - Your AI Transformation Starts Here",
                 body_html=Template(EMAIL_TEMPLATE).render(name=name, industry=industry, calendly_link=CALENDLY_LINK)
             )
 

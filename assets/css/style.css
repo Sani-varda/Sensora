@@ -4874,7 +4874,7 @@ label {
 /*--------------------------------------------------------------
   8. Footer
 ----------------------------------------------------------------*/
-.cs-fooer_main {
+.cs-footer_main {
   padding: 95px 0 35px;
 }
 
@@ -5071,7 +5071,7 @@ label {
     margin-top: 15px;
   }
 
-  .cs-fooer_main {
+  .cs-footer_main {
     padding: 60px 0 15px;
   }
 }
