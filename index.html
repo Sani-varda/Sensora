@@ -1098,55 +1098,152 @@
   </section>
   <!-- End CTA -->
   <!-- Start Comparison Section -->
-  <section>
+  <section class="cs-gradient_bg_1">
     <div class="container">
+      <div class="cs-height_100 cs-height_lg_60"></div>
       <div class="cs-section_heading cs-style1 text-center">
-        <h3 class="cs-section_subtitle">Why ML Arc?</h3>
-        <h2 class="cs-section_title">Human Support vs. ML Arc AI Agents</h2>
+        <h3 class="cs-section_subtitle">The AI Advantage</h3>
+        <h2 class="cs-section_title">Why Forward-Thinking Businesses Choose ML Arc</h2>
       </div>
       <div class="cs-height_90 cs-height_lg_45"></div>
-      <div class="table-responsive">
-        <table class="table cs-comparison_table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Traditional Human Support</th>
-              <th class="cs-accent_color">ML Arc AI Agents</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Availability</td>
-              <td>8-10 Hours / Day</td>
-              <td>24/7/365 Instant</td>
-            </tr>
-            <tr>
-              <td>Response Time</td>
-              <td>Minutes to Hours</td>
-              <td>&lt; 2 Seconds</td>
-            </tr>
-            <tr>
-              <td>Scalability</td>
-              <td>Hire More People</td>
-              <td>Unlimited Concurrent Chats</td>
-            </tr>
-            <tr>
-              <td>Cost</td>
-              <td>High Salary + Benefits</td>
-              <td>Fraction of a Salary</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="cs-comparison_matrix">
+        <div class="cs-comparison_header">
+          <div class="cs-comparison_feature_head">Operational Capabilities</div>
+          <div class="cs-comparison_competitor_head">Traditional Support</div>
+          <div class="cs-comparison_mlarc_head cs-accent_bg">ML Arc AI Solutions</div>
+        </div>
+        
+        <div class="cs-comparison_row">
+          <div class="cs-comparison_feature">Availability & Reach</div>
+          <div class="cs-comparison_competitor">8-10 Hours / Limited to Timezones</div>
+          <div class="cs-comparison_mlarc">24/7/365 Global Coverage</div>
+        </div>
+        
+        <div class="cs-comparison_row">
+          <div class="cs-comparison_feature">Response Latency</div>
+          <div class="cs-comparison_competitor">5-30 Minutes (Average)</div>
+          <div class="cs-comparison_mlarc">Sub-2 Second Instant Response</div>
+        </div>
+        
+        <div class="cs-comparison_row">
+          <div class="cs-comparison_feature">Handling Capacity</div>
+          <div class="cs-comparison_competitor">1 Customer at a time per agent</div>
+          <div class="cs-comparison_mlarc">Infinite Concurrent Interactions</div>
+        </div>
+        
+        <div class="cs-comparison_row">
+          <div class="cs-comparison_feature">Knowledge Retrieval</div>
+          <div class="cs-comparison_competitor">Manual lookup / Memory based</div>
+          <div class="cs-comparison_mlarc">RAG-Powered Precise Data Access</div>
+        </div>
+        
+        <div class="cs-comparison_row">
+          <div class="cs-comparison_feature">Scalability Cost</div>
+          <div class="cs-comparison_competitor">Linear growth in overhead</div>
+          <div class="cs-comparison_mlarc">Scale to 10k users with $0 extra</div>
+        </div>
+
+        <div class="cs-comparison_footer text-center">
+          <div class="cs-height_40 cs-height_lg_30"></div>
+          <p class="cs-m0 cs-primary_color cs-semi_bold">Average Operational Savings: <span class="cs-accent_color">60% - 85%</span> per year</p>
+        </div>
       </div>
     </div>
   </section>
+
   <style>
-    .cs-comparison_table { color: #fff; border: 1px solid #333; }
-    .cs-comparison_table th { background: #111; padding: 20px; border: 1px solid #333; }
-    .cs-comparison_table td { padding: 15px; border: 1px solid #333; }
-    .cs-accent_color { color: #ff5e14; } /* Adjusted to match site's orange if applicable, or just use a highlight color */
+    .cs-comparison_matrix {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .cs-comparison_header {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr;
+      background: rgba(0, 0, 0, 0.3);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+    .cs-comparison_header > div {
+      padding: 25px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cs-comparison_row {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr;
+      transition: all 0.3s ease;
+    }
+    .cs-comparison_row:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .cs-comparison_row > div {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .cs-comparison_feature {
+      font-weight: 600;
+      color: #fff;
+    }
+    .cs-comparison_competitor {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .cs-comparison_mlarc {
+      font-weight: 600;
+      color: var(--accent-color, #ff5e14);
+      background: rgba(255, 94, 20, 0.03);
+    }
+    .cs-comparison_mlarc_head {
+      text-align: center;
+      color: #fff;
+    }
+    .cs-comparison_footer {
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 767px) {
+      .cs-comparison_header {
+        grid-template-columns: 1fr;
+      }
+      .cs-comparison_competitor_head {
+        display: none;
+      }
+      .cs-comparison_row {
+        grid-template-columns: 1fr;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .cs-comparison_row > div {
+        border-bottom: none;
+        padding: 5px 20px;
+      }
+      .cs-comparison_feature {
+        font-size: 16px;
+        color: var(--accent-color, #ff5e14);
+        padding-top: 15px !important;
+      }
+      .cs-comparison_competitor::before {
+        content: "Traditional: ";
+        font-weight: 700;
+        color: rgba(255,255,255,0.4);
+      }
+      .cs-comparison_mlarc::before {
+        content: "ML Arc: ";
+        font-weight: 700;
+        color: var(--accent-color, #ff5e14);
+      }
+    }
   </style>
   <!-- End Comparison Section -->
+
   <div class="cs-height_150 cs-height_lg_80"></div>
   <!-- Start FAQ Section -->
   <section id="faq">
