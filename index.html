@@ -1159,32 +1159,34 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      max-width: 900px;
+      margin: 0 auto;
     }
     .cs-comparison_header {
       display: grid;
-      grid-template-columns: 2fr 1.5fr 1.5fr;
+      grid-template-columns: 1.8fr 1.2fr 1.2fr;
       background: rgba(0, 0, 0, 0.3);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-size: 14px;
+      font-size: 13px;
     }
     .cs-comparison_header > div {
-      padding: 25px 20px;
+      padding: 18px 15px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .cs-comparison_row {
       display: grid;
-      grid-template-columns: 2fr 1.5fr 1.5fr;
+      grid-template-columns: 1.8fr 1.2fr 1.2fr;
       transition: all 0.3s ease;
     }
     .cs-comparison_row:hover {
       background: rgba(255, 255, 255, 0.05);
     }
     .cs-comparison_row > div {
-      padding: 20px;
+      padding: 15px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 15px;
+      font-size: 14px;
       display: flex;
       align-items: center;
     }
@@ -1205,7 +1207,7 @@
       color: #fff;
     }
     .cs-comparison_footer {
-      padding: 30px;
+      padding: 20px;
       background: rgba(0, 0, 0, 0.2);
     }
 
@@ -1218,7 +1220,7 @@
       }
       .cs-comparison_row {
         grid-template-columns: 1fr;
-        padding: 15px 0;
+        padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .cs-comparison_row > div {
@@ -1226,9 +1228,9 @@
         padding: 5px 20px;
       }
       .cs-comparison_feature {
-        font-size: 16px;
+        font-size: 15px;
         color: var(--accent-color, #ff5e14);
-        padding-top: 15px !important;
+        padding-top: 10px !important;
       }
       .cs-comparison_competitor::before {
         content: "Traditional: ";
@@ -1242,6 +1244,7 @@
       }
     }
   </style>
+
   <!-- End Comparison Section -->
 
   <div class="cs-height_150 cs-height_lg_80"></div>
