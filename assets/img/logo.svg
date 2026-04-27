@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Text: ML Arc - AI Software Agency -->
-  <text x="0" y="26" font-family="Arial Black, sans-serif" font-size="16" font-weight="900" fill="white">ML</text>
-  <text x="73" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#1034A6">Arc</text>
+<svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text y="26" font-family="Arial Black, sans-serif" font-size="18" font-weight="900">
+    <tspan x="0" fill="white">ML</tspan>
+    <tspan x="30" font-family="Arial, sans-serif" font-weight="400" fill="#1034A6">Arc</tspan>
+  </text>
 </svg>
