@@ -8,7 +8,7 @@ from urllib.parse import parse_qs
 from jinja2 import Template
 
 # --- CONFIGURATION ---
-SENDER_EMAIL = "imsunnystark@gmail.com"
+SENDER_EMAIL = "founder@mlarcai.com"
 APP_PASSWORD = "uoxd hdix lwqf ttfg"
 CALENDLY_LINK = "https://calendly.com/imsunnystark/30min"
 DISPLAY_NAME = "Sani | ML Arc - AI Software Agency"
@@ -80,7 +80,7 @@ EMAIL_TEMPLATE = """
         <div class="footer">
             <p>&copy; 2026 ML Arc - AI Software Agency. All rights reserved.</p>
             <p>Hyderabad, India | +91 70216 28334</p>
-            <p style="margin-top: 10px;"><a href="https://moonlitarc.vercel.app">Visit Our Website</a> | <a href="mailto:imsunnystark@gmail.com">Email Support</a></p>
+            <p style="margin-top: 10px;"><a href="https://moonlitarc.vercel.app">Visit Our Website</a> | <a href="mailto:founder@mlarcai.com">Email Support</a></p>
         </div>
     </div>
 </body>
