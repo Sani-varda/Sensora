@@ -45,4 +45,9 @@
     <loc>https://mlarc.ai/solutions/ai-for-saas.html</loc>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://mlarc.ai/media.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
