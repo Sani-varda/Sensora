@@ -93,7 +93,7 @@ function initializeAIChatbot() {
   // Send initial welcome message sequence
   sendBotMessageSequence([
     "Hello there! 👋 I am ML Arc's neural support assistant.",
-    "I am trained to help you automate operations, design custom RAG systems, and deploy Voice AI agents. Ask me anything, or choose a quick option below!"
+    "I am trained to help you build high-converting websites, deploy custom AI Chat & Voice agents, automate workflows, and scale growth via ads. Ask me anything, or choose a quick option below!"
   ]);
 }
 
@@ -162,7 +162,7 @@ function generateFAQResponse(text) {
   const query = text.toLowerCase();
 
   if (query.includes("service") || query.includes("offer") || query.includes("do you do")) {
-    return "At **ML Arc**, we architect custom AI workflows for enterprises. Our core expertise covers:<br>• **Autonomous Voice Agents:** Human-like voice bots for support & sales.<br>• **Neural Knowledge Bases (RAG):** Context-rich database systems trained on your company data.<br>• **Workflow Automation:** Orchestrations that sync your CRM, Slack, and operational tools.";
+    return "At **ML Arc**, we build comprehensive growth engines across 4 core areas:<br>• **Web & CRM:** Custom Web Development, CMS Integration, and Notion CRM setups.<br>• **AI Chat & Voice Agents:** 24/7 Web Chatbots, WhatsApp Assistants, and Sub-1s latency Voice AI.<br>• **Business Automation:** End-to-end N8N/Python workflows, Appointment Handlers, and Review Engines.<br>• **Advertising & Growth:** Performance-focused Google Ads, Meta Ads, and ongoing Funnel Optimization.";
   }
   if (query.includes("roi") || query.includes("return") || query.includes("value") || query.includes("much cost")) {
     return "Our clients transform their cost structure by automating tier-1 administrative burdens. On average, businesses partnering with ML Arc achieve a **320% ROI** within 12 months, saving hundreds of manual hours each month.";
@@ -214,7 +214,7 @@ function processLeadStep(userText) {
     simulateThinking();
     setTimeout(() => {
       removeThinking();
-      appendMessage("Got it! Lastly, tell me briefly about **your business needs** or what processes you would like to automate with AI (e.g. support, voice agents, data search):", "bot");
+      appendMessage("Got it! Lastly, tell me briefly about **your business needs** or what processes you would like to build/automate (e.g. custom website, AI chatbot, voice agents, WhatsApp, or Google/Meta ads):", "bot");
     }, 800);
   } 
   else if (chatbotState.activeStep === "needs") {
