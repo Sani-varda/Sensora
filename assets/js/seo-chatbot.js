@@ -337,26 +337,26 @@ function injectChatbotStyles() {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: var(--accent-color, #ff5e14);
+      background: var(--accent-color, #1034A6);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(255, 94, 20, 0.4);
+      box-shadow: 0 10px 25px rgba(16, 52, 166, 0.4);
       cursor: pointer;
       z-index: 99999;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     #cs-chatbot-launcher:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(255, 94, 20, 0.6);
+      box-shadow: 0 12px 30px rgba(16, 52, 166, 0.6);
     }
     .cs-launcher-pulse {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: rgba(255, 94, 20, 0.4);
+      background: rgba(16, 52, 166, 0.4);
       animation: cs-pulse 2s infinite;
       z-index: -1;
     }
@@ -374,7 +374,7 @@ function injectChatbotStyles() {
       height: 560px;
       border-radius: 20px;
       background: rgba(15, 15, 15, 0.85);
-      border: 1px solid rgba(255, 94, 20, 0.15);
+      border: 1px solid rgba(16, 52, 166, 0.15);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -409,8 +409,8 @@ function injectChatbotStyles() {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(255, 94, 20, 0.1);
-      color: #ff5e14;
+      background: rgba(16, 52, 166, 0.1);
+      color: #1034A6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -499,10 +499,10 @@ function injectChatbotStyles() {
       border-bottom-left-radius: 4px;
     }
     .cs-msg-user .cs-chat-bubble {
-      background: var(--accent-color, #ff5e14);
+      background: var(--accent-color, #1034A6);
       color: #fff;
       border-bottom-right-radius: 4px;
-      box-shadow: 0 4px 12px rgba(255, 94, 20, 0.2);
+      box-shadow: 0 4px 12px rgba(16, 52, 166, 0.2);
     }
     @keyframes cs-fade-in {
       from { opacity: 0; transform: translateY(8px); }
@@ -553,14 +553,14 @@ function injectChatbotStyles() {
       border-color: rgba(255, 255, 255, 0.2);
     }
     .accent-pill {
-      background: rgba(255, 94, 20, 0.08) !important;
-      border: 1px solid rgba(255, 94, 20, 0.25) !important;
-      color: #ff5e14 !important;
+      background: rgba(16, 52, 166, 0.08) !important;
+      border: 1px solid rgba(16, 52, 166, 0.25) !important;
+      color: #1034A6 !important;
     }
     .accent-pill:hover {
-      background: var(--accent-color, #ff5e14) !important;
+      background: var(--accent-color, #1034A6) !important;
       color: #fff !important;
-      border-color: var(--accent-color, #ff5e14) !important;
+      border-color: var(--accent-color, #1034A6) !important;
     }
 
     .cs-chatbot-input-area {
@@ -583,15 +583,15 @@ function injectChatbotStyles() {
       transition: border-color 0.2s ease;
     }
     #cs-chatbot-input-field:focus {
-      border-color: rgba(255, 94, 20, 0.4);
+      border-color: rgba(16, 52, 166, 0.4);
     }
     #cs-chatbot-send-btn {
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: rgba(255, 94, 20, 0.1);
+      background: rgba(16, 52, 166, 0.1);
       border: none;
-      color: #ff5e14;
+      color: #1034A6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -599,7 +599,7 @@ function injectChatbotStyles() {
       transition: all 0.2s ease;
     }
     #cs-chatbot-send-btn:hover {
-      background: var(--accent-color, #ff5e14);
+      background: var(--accent-color, #1034A6);
       color: #fff;
     }
 
