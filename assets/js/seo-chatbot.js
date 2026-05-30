@@ -162,21 +162,42 @@ function generateFAQResponse(text) {
   const query = text.toLowerCase();
 
   if (query.includes("service") || query.includes("offer") || query.includes("do you do")) {
-    return "At **ML Arc**, we build comprehensive growth engines across 4 core areas:<br>• **Web & CRM:** Custom Web Development, CMS Integration, and Notion CRM setups.<br>• **AI Chat & Voice Agents:** 24/7 Web Chatbots, WhatsApp Assistants, and Sub-1s latency Voice AI.<br>• **Business Automation:** End-to-end N8N/Python workflows, Appointment Handlers, and Review Engines.<br>• **Advertising & Growth:** Performance-focused Google Ads, Meta Ads, and ongoing Funnel Optimization.";
+    return "At <strong>ML Arc</strong>, we build comprehensive growth engines across 4 core areas:<br>" +
+      "• <strong>Web & CRM:</strong> Custom Web Development, CMS Integration, and Notion CRM setups.<br>" +
+      "• <strong>AI Chat & Voice Agents:</strong> 24/7 Web Chatbots, WhatsApp Assistants, and Sub-1s latency Voice AI.<br>" +
+      "• <strong>Business Automation:</strong> End-to-end N8N/Python workflows, Appointment Handlers, and Review Engines.<br>" +
+      "• <strong>Advertising & Growth:</strong> Performance-focused Google Ads, Meta Ads, and ongoing Funnel Optimization.";
   }
-  if (query.includes("roi") || query.includes("return") || query.includes("value") || query.includes("much cost")) {
-    return "Our clients transform their cost structure by automating tier-1 administrative burdens. On average, businesses partnering with ML Arc achieve a **320% ROI** within 12 months, saving hundreds of manual hours each month.";
+  if (query.includes("price") || query.includes("cost") || query.includes("package") || query.includes("how much")) {
+    return "We offer clear, value-driven pricing designed to maximize your ROI:<br>" +
+      "• <strong>Web Development:</strong> Custom 5-page site from Rs.15,000<br>" +
+      "• <strong>CMS & Notion CRM:</strong> Complete lead/content systems from Rs.5,000<br>" +
+      "• <strong>AI Chatbots & N8N Workflows:</strong> From Rs.12,000<br>" +
+      "• <strong>Voice AI Agents:</strong> Sub-1s latency calling from Rs.18,000<br>" +
+      "• <strong>Google & Meta Ads:</strong> Performance campaigns from Rs.12,000/mo";
+  }
+  if (query.includes("timeline") || query.includes("delivery") || query.includes("how long") || query.includes("days")) {
+    return "We move fast without compromising on high fidelity. Most custom websites, Notion CRMs, and automated chatbots go live within <strong>7 to 14 days</strong>, meaning you start generating value and leads immediately.";
+  }
+  if (query.includes("founder") || query.includes("team") || query.includes("sani") || query.includes("who are you") || query.includes("about")) {
+    return "ML Arc is led by <strong>Sani Varada</strong>, combining deep quantitative finance experience with advanced full-stack software engineering. We operate as a remote-first digital agency serving clients worldwide, focusing strictly on data-driven ROI and clean implementations.";
+  }
+  if (query.includes("rag") || query.includes("hallucination") || query.includes("tech") || query.includes("security")) {
+    return "Our AI systems utilize state-of-the-art tools like Python, N8N, and OpenAI's GPT-4o. By grounding every bot in a custom Retrieval-Augmented Generation (RAG) vector database of your business data, we guarantee <strong>zero hallucinations</strong> and completely secure, brand-aligned answers.";
+  }
+  if (query.includes("roi") || query.includes("return") || query.includes("value")) {
+    return "Our clients transform their cost structure by automating tier-1 administrative burdens. On average, businesses partnering with ML Arc achieve a <strong>320% ROI</strong> within 12 months, saving hundreds of manual hours each month.";
   }
   if (query.includes("automate") || query.includes("help my business") || query.includes("how can ai")) {
-    return "AI acts as a leverage multiplier. We help you:<br>1. **Reduce Overhead:** Automate 24/7 client booking and FAQ answers.<br>2. **Improve Speed:** Retrieve critical documents instantly using semantic search.<br>3. **Scale Capacity:** Handle spikes in lead volume without adding headcount. 🚀";
+    return "AI acts as a leverage multiplier. We help you:<br>1. <strong>Reduce Overhead:</strong> Automate 24/7 client booking and FAQ answers.<br>2. <strong>Improve Speed:</strong> Retrieve critical documents instantly using semantic search.<br>3. <strong>Scale Capacity:</strong> Handle spikes in lead volume without adding headcount. 🚀";
   }
   if (query.includes("contact") || query.includes("audit") || query.includes("book") || query.includes("call")) {
     startLeadCapture();
     return "Great choice! Let's get a few quick details to customize your Free AI Audit strategy.";
   }
 
-  // Fallback fallback response
-  return "That is an excellent question! I'd love to help you build automated workflows for that. Click on **🚀 Book a Free AI Audit** below so our lead AI strategist can review your business and design a customized roadmap for you!";
+  // Fallback response
+  return "That is an excellent question! I am trained to help you automate operations, design custom RAG systems, deploy voice callers, and scale growth via ads. Click on <strong>🚀 Book a Free AI Audit</strong> below so our lead engineer can review your business and design a customized roadmap for you!";
 }
 
 // LEAD CAPTURE SYSTEM
@@ -187,7 +208,7 @@ function startLeadCapture() {
   // Hide standard quick options to focus on form steps
   document.getElementById("cs-chatbot-quick-options").style.display = "none";
   
-  appendMessage("Perfect! Let's schedule your AI audit. To start, **what is your name?**", "bot");
+  appendMessage("Perfect! Let's schedule your AI audit. To start, <strong>what is your name?</strong>", "bot");
 }
 
 function processLeadStep(userText) {
@@ -198,7 +219,7 @@ function processLeadStep(userText) {
     simulateThinking();
     setTimeout(() => {
       removeThinking();
-      appendMessage(`Pleasure meeting you, **${userText}**! What is your **business email address** so we can send the audit details?`, "bot");
+      appendMessage(`Pleasure meeting you, <strong>${userText}</strong>! What is your <strong>business email address</strong> so we can send the audit details?`, "bot");
     }, 800);
   } 
   else if (chatbotState.activeStep === "email") {
@@ -214,7 +235,7 @@ function processLeadStep(userText) {
     simulateThinking();
     setTimeout(() => {
       removeThinking();
-      appendMessage("Got it! Lastly, tell me briefly about **your business needs** or what processes you would like to build/automate (e.g. custom website, AI chatbot, voice agents, WhatsApp, or Google/Meta ads):", "bot");
+      appendMessage("Got it! Lastly, tell me briefly about <strong>your business needs</strong> or what processes you would like to build/automate (e.g. custom website, AI chatbot, voice agents, WhatsApp, or Google/Meta ads):", "bot");
     }, 800);
   } 
   else if (chatbotState.activeStep === "needs") {
@@ -237,7 +258,7 @@ function processLeadStep(userText) {
           </svg>
           <div class="cs-success-text">
             <strong>Excellent, ${chatbotState.leadData.name}!</strong><br>
-            Your AI audit request is officially booked. Our senior engineer will analyze your parameters and contact you at **${chatbotState.leadData.email}** within 24 hours. 🚀
+            Your AI audit request is officially booked. Our senior engineer will analyze your parameters and contact you at <strong>${chatbotState.leadData.email}</strong> within 24 hours. 🚀
           </div>
         </div>
       `, "bot");
