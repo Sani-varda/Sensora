@@ -58,7 +58,7 @@ def submit_to_index_now(url_list, host, key, key_location=None):
 
 if __name__ == "__main__":
     MY_HOST = "mlarcai.com"
-    MY_KEY = "ca970e15999212777bce89c66bdefef3"
+    MY_KEY = "5b76e54cf5884465a14d1fb9c32d481d"
     
     # Path to sitemap.xml in current directory
     sitemap_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
