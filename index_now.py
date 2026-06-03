@@ -57,7 +57,7 @@ def submit_to_index_now(url_list, host, key, key_location=None):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    MY_HOST = "mlarc.ai"
+    MY_HOST = "mlarcai.com"
     MY_KEY = "ca970e15999212777bce89c66bdefef3"
     
     # Path to sitemap.xml in current directory

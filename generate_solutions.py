@@ -71,7 +71,7 @@ def update_sitemap():
         
     # Find the last </urlset>
     new_urls = []
-    base_url = "https://mlarc.ai/solutions/" # Assuming this is the domain
+    base_url = "https://mlarcai.com/solutions/" # Assuming this is the domain
     
     for data in industries:
         url_entry = f"  <url>\n    <loc>{base_url}{data['slug']}.html</loc>\n    <priority>0.80</priority>\n  </url>\n"

@@ -35,4 +35,4 @@ Allow: /
 User-agent: Anthropic-ai
 Allow: /
 
-Sitemap: https://mlarc.ai/sitemap.xml
+Sitemap: https://mlarcai.com/sitemap.xml
