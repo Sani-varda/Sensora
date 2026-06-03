@@ -1,14 +1,34 @@
 import requests
 import json
+import xml.etree.ElementTree as ET
+import os
+
+def get_urls_from_sitemap(sitemap_path):
+    """
+    Parses sitemap.xml to extract all URLs.
+    """
+    if not os.path.exists(sitemap_path):
+        print(f"Sitemap file not found at: {sitemap_path}")
+        return []
+        
+    try:
+        tree = ET.parse(sitemap_path)
+        root = tree.getroot()
+        # Sitemap XML uses namespace http://www.sitemaps.org/schemas/sitemap/0.9
+        namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        urls = []
+        for url in root.findall('ns:url', namespace):
+            loc = url.find('ns:loc', namespace)
+            if loc is not None and loc.text:
+                urls.append(loc.text.strip())
+        return urls
+    except Exception as e:
+        print(f"Error parsing sitemap: {e}")
+        return []
 
 def submit_to_index_now(url_list, host, key, key_location=None):
     """
     Submits a list of URLs to the IndexNow API (Bing/Yandex).
-    
-    :param url_list: List of URLs to index
-    :param host: Your website domain (e.g., mlarc.ai)
-    :param key: Your IndexNow API key
-    :param key_location: Optional URL to your key file (e.g., https://mlarc.ai/indexnow_key.txt)
     """
     endpoint = "https://api.indexnow.org/IndexNow"
     
@@ -25,8 +45,11 @@ def submit_to_index_now(url_list, host, key, key_location=None):
     
     try:
         response = requests.post(endpoint, data=json.dumps(payload), headers=headers)
-        if response.status_code == 200:
-            print(f"Successfully submitted {len(url_list)} URLs to IndexNow.")
+        if response.status_code in [200, 202]:
+            status_msg = "Successfully submitted" if response.status_code == 200 else "Submitted successfully (verification pending)"
+            print(f"{status_msg} {len(url_list)} URLs to IndexNow.")
+            for url in url_list:
+                print(f"  - {url}")
         else:
             print(f"Failed to submit to IndexNow. Status code: {response.status_code}")
             print(response.text)
@@ -34,16 +57,17 @@ def submit_to_index_now(url_list, host, key, key_location=None):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    # Example usage
-    # You would need to generate a key and place it on your server first.
-    # See indexnow.org for more details.
     MY_HOST = "mlarc.ai"
-    MY_KEY = "YOUR_INDEXNOW_KEY_HERE" # Placeholder
-    URLS = [
-        "https://mlarc.ai/index.html",
-        "https://mlarc.ai/solutions/ai-for-real-estate.html",
-        "https://mlarc.ai/solutions/ai-for-ecommerce.html"
-    ]
+    MY_KEY = "ca970e15999212777bce89c66bdefef3"
     
-    print("IndexNow submission script ready. Please update with your actual API key.")
-    # submit_to_index_now(URLS, MY_HOST, MY_KEY)
+    # Path to sitemap.xml in current directory
+    sitemap_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
+    
+    print("Extracting URLs from sitemap.xml...")
+    URLS = get_urls_from_sitemap(sitemap_file)
+    
+    if URLS:
+        print(f"Found {len(URLS)} URLs to index. Submitting to IndexNow...")
+        submit_to_index_now(URLS, MY_HOST, MY_KEY)
+    else:
+        print("No URLs found to submit.")
