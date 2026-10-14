@@ -1,4 +1,8 @@
-# Development server
+# Python files and local development scripts (local dev only)
+*.py
+api/*.py
+requirements.txt
+pyproject.toml
 dev_server.py
 server.py
 

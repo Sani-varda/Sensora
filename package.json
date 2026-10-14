@@ -6,5 +6,7 @@
     "start": "python dev_server.py",
     "dev": "python dev_server.py"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nodemailer": "^10.1.1"
+  }
 }

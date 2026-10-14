@@ -3,14 +3,12 @@ import sys
 from urllib.parse import urlparse
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-# Import API handlers if available
+# Import API contact handler if available
 try:
-    from api.index import handler as IndexHandler
     from api.contact import handler as ContactHandler
 except Exception as e:
-    IndexHandler = None
     ContactHandler = None
-    print(f"[Warning] Could not import api: {e}", flush=True)
+    print(f"[Warning] Could not import api.contact: {e}", flush=True)
 
 PORT = 8000
 
@@ -35,11 +33,8 @@ class DevServerHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path.rstrip('/')
-        if path == '/api/contact' and ContactHandler:
+        if path in ('/api/contact', '/api') and ContactHandler:
             ContactHandler.do_GET(self)
-            return
-        if path == '/api' and IndexHandler:
-            IndexHandler.do_GET(self)
             return
 
         local_path = self.translate_path(self.path)
