@@ -1,10 +1,10 @@
 /**
- * ML Arc - Premium AI Lead Capture & FAQ Chatbot Widget (2026 Edition)
+ * Sensora - Growth Consultation & FAQ Chat Widget (2026 Edition)
  * Injects a floating glassmorphic chat assistant that captures high-quality leads,
- * answers client FAQs, and showcases neural capabilities in a stunning UI flow.
+ * answers client FAQs, and guides visitors to services.
  */
 document.addEventListener("DOMContentLoaded", function() {
-  initializeAIChatbot();
+  initializeGrowthChatbot();
 });
 
 // Lead capture state
@@ -17,13 +17,13 @@ let chatbotState = {
   }
 };
 
-function initializeAIChatbot() {
+function initializeGrowthChatbot() {
   // Check if chatbot container already exists (avoid duplicates)
-  if (document.getElementById("cs-ai-chatbot-root")) return;
+  if (document.getElementById("cs-chatbot-root")) return;
 
   // Create Chatbot root container
   const chatbotRoot = document.createElement("div");
-  chatbotRoot.id = "cs-ai-chatbot-root";
+  chatbotRoot.id = "cs-chatbot-root";
   document.body.appendChild(chatbotRoot);
 
   // Render Launcher Button & Chat Window HTML
@@ -51,8 +51,8 @@ function initializeAIChatbot() {
             <span class="cs-status-indicator"></span>
           </div>
           <div class="cs-chatbot-bot-details">
-            <h4 class="cs-chatbot-title">ML Arc AI Assistant</h4>
-            <span class="cs-chatbot-subtitle">Always Active • 2026 Edition</span>
+            <h4 class="cs-chatbot-title">Sensora Growth Assistant</h4>
+            <span class="cs-chatbot-subtitle">Always Active • Growth Specialist</span>
           </div>
         </div>
         <button class="cs-chatbot-close-btn" onclick="toggleChatWindow()">
@@ -71,8 +71,8 @@ function initializeAIChatbot() {
       <div id="cs-chatbot-quick-options">
         <button class="cs-quick-pill" onclick="handleQuickOption('do')">What services do you offer?</button>
         <button class="cs-quick-pill" onclick="handleQuickOption('roi')">What is the average client ROI?</button>
-        <button class="cs-quick-pill" onclick="handleQuickOption('help')">How can AI automate my business?</button>
-        <button class="cs-quick-pill accent-pill" onclick="handleQuickOption('audit')">🚀 Book a Free AI Audit</button>
+        <button class="cs-quick-pill" onclick="handleQuickOption('help')">How does Sensora scale brands?</button>
+        <button class="cs-quick-pill accent-pill" onclick="handleQuickOption('audit')">🚀 Book Free Growth Consultation</button>
       </div>
 
       <!-- Input Area -->
@@ -92,8 +92,8 @@ function initializeAIChatbot() {
 
   // Send initial welcome message sequence
   sendBotMessageSequence([
-    "Hello there! 👋 I am ML Arc's neural support assistant.",
-    "I am trained to help you build high-converting websites, deploy custom AI Chat & Voice agents, automate workflows, and scale growth via ads. Ask me anything, or choose a quick option below!"
+    "Hello there! 👋 I am Sensora's growth assistant.",
+    "I can help you explore our brand marketing, healthcare & startup growth systems, demand generation, and performance campaigns. Ask me anything, or choose a quick option below!"
   ]);
 }
 
@@ -141,8 +141,8 @@ function handleQuickOption(optionKey) {
   let userText = "";
   if (optionKey === "do") userText = "What services do you offer?";
   else if (optionKey === "roi") userText = "What is the average client ROI?";
-  else if (optionKey === "help") userText = "How can AI automate my business?";
-  else if (optionKey === "audit") userText = "Book a Free AI Audit";
+  else if (optionKey === "help") userText = "How does Sensora scale brands?";
+  else if (optionKey === "audit") userText = "Book Free Growth Consultation";
 
   appendMessage(userText, "user");
 
@@ -162,42 +162,41 @@ function generateFAQResponse(text) {
   const query = text.toLowerCase();
 
   if (query.includes("service") || query.includes("offer") || query.includes("do you do")) {
-    return "At <strong>ML Arc</strong>, we build comprehensive growth engines across 4 core areas:<br>" +
-      "• <strong>Web & CRM:</strong> Custom Web Development, CMS Integration, and Notion CRM setups.<br>" +
-      "• <strong>AI Chat & Voice Agents:</strong> 24/7 Web Chatbots, WhatsApp Assistants, and Sub-1s latency Voice AI.<br>" +
-      "• <strong>Business Automation:</strong> End-to-end N8N/Python workflows, Appointment Handlers, and Review Engines.<br>" +
-      "• <strong>Advertising & Growth:</strong> Performance-focused Google Ads, Meta Ads, and ongoing Funnel Optimization.";
+    return "At <strong>Sensora</strong>, we deliver integrated growth engines across 4 key areas:<br>" +
+      "• <strong>Brand Strategy & Positioning:</strong> Market research, messaging architecture, and visual identity.<br>" +
+      "• <strong>Healthcare & Doctor Brands:</strong> Patient discovery, clinic reputation, and appointment acquisition.<br>" +
+      "• <strong>Startup Launch Engines:</strong> From idea to credible brand, launch funnels, and customer acquisition.<br>" +
+      "• <strong>Performance Marketing:</strong> High-converting Google & Meta ad campaigns, SEO, and CRO.";
   }
   if (query.includes("price") || query.includes("cost") || query.includes("package") || query.includes("how much")) {
-    return "We offer clear, value-driven pricing designed to maximize your ROI:<br>" +
-      "• <strong>Web Development:</strong> Custom 5-page site from Rs.15,000<br>" +
-      "• <strong>CMS & Notion CRM:</strong> Complete lead/content systems from Rs.5,000<br>" +
-      "• <strong>AI Chatbots & N8N Workflows:</strong> From Rs.12,000<br>" +
-      "• <strong>Voice AI Agents:</strong> Sub-1s latency calling from Rs.18,000<br>" +
-      "• <strong>Google & Meta Ads:</strong> Performance campaigns from Rs.12,000/mo";
+    return "We offer clear, value-driven pricing designed to maximize your commercial ROI:<br>" +
+      "• <strong>Brand Identity & Strategy:</strong> Complete positioning & brand guidelines from Rs.25,000<br>" +
+      "• <strong>High-Converting Web Systems:</strong> Custom responsive sites from Rs.15,000<br>" +
+      "• <strong>Lead & Demand Engines:</strong> Multi-channel acquisition systems from Rs.20,000<br>" +
+      "• <strong>Google & Meta Ads Management:</strong> Performance campaigns from Rs.15,000/mo";
   }
   if (query.includes("timeline") || query.includes("delivery") || query.includes("how long") || query.includes("days")) {
-    return "We move fast without compromising on high fidelity. Most custom websites, Notion CRMs, and automated chatbots go live within <strong>7 to 14 days</strong>, meaning you start generating value and leads immediately.";
+    return "We move fast without compromising on high fidelity. Most custom brand assets, landing systems, and performance campaigns go live within <strong>7 to 14 days</strong>, meaning you start generating market momentum and qualified enquiries immediately.";
   }
   if (query.includes("founder") || query.includes("team") || query.includes("sani") || query.includes("who are you") || query.includes("about")) {
-    return "ML Arc is led by <strong>Sani Varada</strong>, combining deep quantitative finance experience with advanced full-stack software engineering. We operate as a remote-first digital agency serving clients worldwide, focusing strictly on data-driven ROI and clean implementations.";
+    return "Sensora is led by <strong>Sani Varada</strong>, combining deep strategic market insight with high-performance creative execution. We operate as an integrated growth partner serving healthcare brands, startups, and institutions globally.";
   }
-  if (query.includes("rag") || query.includes("hallucination") || query.includes("tech") || query.includes("security")) {
-    return "Our AI systems utilize state-of-the-art tools like Python, N8N, and OpenAI's GPT-4o. By grounding every bot in a custom Retrieval-Augmented Generation (RAG) vector database of your business data, we guarantee <strong>zero hallucinations</strong> and completely secure, brand-aligned answers.";
+  if (query.includes("framework") || query.includes("method") || query.includes("market360") || query.includes("strategy")) {
+    return "Our proprietary <strong>Market360\u2122</strong> framework unifies market research, authoritative brand storytelling, multi-channel performance campaigns, and lead conversion systems to deliver predictable, compounding growth.";
   }
   if (query.includes("roi") || query.includes("return") || query.includes("value")) {
-    return "Our clients transform their cost structure by automating tier-1 administrative burdens. On average, businesses partnering with ML Arc achieve a <strong>320% ROI</strong> within 12 months, saving hundreds of manual hours each month.";
+    return "Our clients achieve scalable customer and patient acquisition with optimized acquisition costs. On average, businesses partnering with Sensora achieve a <strong>320% ROI</strong> within 12 months, scaling revenue and compounding market share.";
   }
-  if (query.includes("automate") || query.includes("help my business") || query.includes("how can ai")) {
-    return "AI acts as a leverage multiplier. We help you:<br>1. <strong>Reduce Overhead:</strong> Automate 24/7 client booking and FAQ answers.<br>2. <strong>Improve Speed:</strong> Retrieve critical documents instantly using semantic search.<br>3. <strong>Scale Capacity:</strong> Handle spikes in lead volume without adding headcount. 🚀";
+  if (query.includes("scale") || query.includes("help my business") || query.includes("growth")) {
+    return "Sensora acts as your dedicated growth partner. We help you:<br>1. <strong>Build Authority:</strong> Position your brand as the definitive leader in your market.<br>2. <strong>Acquire Customers:</strong> Generate high-intent leads and patient appointments predictably.<br>3. <strong>Scale Commercial Impact:</strong> Maximize ROI through data-driven performance marketing. 🚀";
   }
-  if (query.includes("contact") || query.includes("audit") || query.includes("book") || query.includes("call")) {
+  if (query.includes("contact") || query.includes("audit") || query.includes("consult") || query.includes("book") || query.includes("call")) {
     startLeadCapture();
-    return "Great choice! Let's get a few quick details to customize your Free AI Audit strategy.";
+    return "Great choice! Let's get a few quick details to customize your Free Growth Consultation.";
   }
 
   // Fallback response
-  return "That is an excellent question! I am trained to help you automate operations, design custom RAG systems, deploy voice callers, and scale growth via ads. Click on <strong>🚀 Book a Free AI Audit</strong> below so our lead engineer can review your business and design a customized roadmap for you!";
+  return "That is an excellent question! I am trained to help you explore our brand marketing, healthcare & startup growth systems, demand generation, and performance campaigns. Click on <strong>🚀 Book Free Growth Consultation</strong> below so our team can evaluate your market opportunity!";
 }
 
 // LEAD CAPTURE SYSTEM
@@ -208,7 +207,7 @@ function startLeadCapture() {
   // Hide standard quick options to focus on form steps
   document.getElementById("cs-chatbot-quick-options").style.display = "none";
   
-  appendMessage("Perfect! Let's schedule your AI audit. To start, <strong>what is your name?</strong>", "bot");
+  appendMessage("Perfect! Let's schedule your growth consultation. To start, <strong>what is your name?</strong>", "bot");
 }
 
 function processLeadStep(userText) {
@@ -219,7 +218,7 @@ function processLeadStep(userText) {
     simulateThinking();
     setTimeout(() => {
       removeThinking();
-      appendMessage(`Pleasure meeting you, <strong>${userText}</strong>! What is your <strong>business email address</strong> so we can send the audit details?`, "bot");
+      appendMessage(`Pleasure meeting you, <strong>${userText}</strong>! What is your <strong>business email address</strong> so we can send the growth roadmap?`, "bot");
     }, 800);
   } 
   else if (chatbotState.activeStep === "email") {
@@ -235,7 +234,7 @@ function processLeadStep(userText) {
     simulateThinking();
     setTimeout(() => {
       removeThinking();
-      appendMessage("Got it! Lastly, tell me briefly about <strong>your business needs</strong> or what processes you would like to build/automate (e.g. custom website, AI chatbot, voice agents, WhatsApp, or Google/Meta ads):", "bot");
+      appendMessage("Got it! Lastly, tell me briefly about <strong>your business goals</strong> (e.g. brand redesign, healthcare patient acquisition, startup launch, or Google/Meta ads):", "bot");
     }, 800);
   } 
   else if (chatbotState.activeStep === "needs") {
@@ -258,7 +257,7 @@ function processLeadStep(userText) {
           </svg>
           <div class="cs-success-text">
             <strong>Excellent, ${chatbotState.leadData.name}!</strong><br>
-            Your AI audit request is officially booked. Our senior engineer will analyze your parameters and contact you at <strong>${chatbotState.leadData.email}</strong> within 24 hours. 🚀
+            Your growth consultation request is officially booked. Our senior strategist will analyze your brand and contact you at <strong>${chatbotState.leadData.email}</strong> within 24 hours. 🚀
           </div>
         </div>
       `, "bot");
@@ -280,7 +279,7 @@ function validateEmail(email) {
 function saveLeadToStorage(lead) {
   let leads = [];
   try {
-    const existingLeads = localStorage.getItem("mlarc_captured_leads");
+    const existingLeads = localStorage.getItem("sensora_captured_leads");
     if (existingLeads) leads = JSON.parse(existingLeads);
   } catch (e) {
     console.error("Error loading leads from storage", e);
@@ -291,8 +290,8 @@ function saveLeadToStorage(lead) {
   lead.sourceUrl = window.location.href;
   leads.push(lead);
   
-  localStorage.setItem("mlarc_captured_leads", JSON.stringify(leads));
-  console.log("🚀 [ML Arc Chatbot] New Lead Captured successfully:", lead);
+  localStorage.setItem("sensora_captured_leads", JSON.stringify(leads));
+  console.log("🚀 [Sensora Chatbot] New Lead Captured successfully:", lead);
 }
 
 // UI HELPER UTILITIES
@@ -358,26 +357,26 @@ function injectChatbotStyles() {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: var(--accent-color, #1034A6);
+      background: var(--accent-color, #E06196);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(16, 52, 166, 0.4);
+      box-shadow: 0 10px 25px rgba(224, 97, 150, 0.4);
       cursor: pointer;
       z-index: 99999;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     #cs-chatbot-launcher:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(16, 52, 166, 0.6);
+      box-shadow: 0 12px 30px rgba(224, 97, 150, 0.6);
     }
     .cs-launcher-pulse {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: rgba(16, 52, 166, 0.4);
+      background: rgba(224, 97, 150, 0.4);
       animation: cs-pulse 2s infinite;
       z-index: -1;
     }
@@ -395,7 +394,7 @@ function injectChatbotStyles() {
       height: 560px;
       border-radius: 20px;
       background: rgba(15, 15, 15, 0.85);
-      border: 1px solid rgba(16, 52, 166, 0.15);
+      border: 1px solid rgba(224, 97, 150, 0.15);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -430,8 +429,8 @@ function injectChatbotStyles() {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(16, 52, 166, 0.1);
-      color: #1034A6;
+      background: rgba(224, 97, 150, 0.1);
+      color: #E06196;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -520,10 +519,10 @@ function injectChatbotStyles() {
       border-bottom-left-radius: 4px;
     }
     .cs-msg-user .cs-chat-bubble {
-      background: var(--accent-color, #1034A6);
+      background: var(--accent-color, #E06196);
       color: #fff;
       border-bottom-right-radius: 4px;
-      box-shadow: 0 4px 12px rgba(16, 52, 166, 0.2);
+      box-shadow: 0 4px 12px rgba(224, 97, 150, 0.2);
     }
     @keyframes cs-fade-in {
       from { opacity: 0; transform: translateY(8px); }
@@ -574,14 +573,14 @@ function injectChatbotStyles() {
       border-color: rgba(255, 255, 255, 0.2);
     }
     .accent-pill {
-      background: rgba(16, 52, 166, 0.08) !important;
-      border: 1px solid rgba(16, 52, 166, 0.25) !important;
-      color: #1034A6 !important;
+      background: rgba(224, 97, 150, 0.08) !important;
+      border: 1px solid rgba(224, 97, 150, 0.25) !important;
+      color: #E06196 !important;
     }
     .accent-pill:hover {
-      background: var(--accent-color, #1034A6) !important;
+      background: var(--accent-color, #E06196) !important;
       color: #fff !important;
-      border-color: var(--accent-color, #1034A6) !important;
+      border-color: var(--accent-color, #E06196) !important;
     }
 
     .cs-chatbot-input-area {
@@ -604,15 +603,15 @@ function injectChatbotStyles() {
       transition: border-color 0.2s ease;
     }
     #cs-chatbot-input-field:focus {
-      border-color: rgba(16, 52, 166, 0.4);
+      border-color: rgba(224, 97, 150, 0.4);
     }
     #cs-chatbot-send-btn {
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: rgba(16, 52, 166, 0.1);
+      background: rgba(224, 97, 150, 0.1);
       border: none;
-      color: #1034A6;
+      color: #E06196;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -620,7 +619,7 @@ function injectChatbotStyles() {
       transition: all 0.2s ease;
     }
     #cs-chatbot-send-btn:hover {
-      background: var(--accent-color, #1034A6);
+      background: var(--accent-color, #E06196);
       color: #fff;
     }
 

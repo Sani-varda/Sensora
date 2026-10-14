@@ -35,4 +35,4 @@ Allow: /
 User-agent: Anthropic-ai
 Allow: /
 
-Sitemap: https://mlarcai.com/sitemap.xml
+Sitemap: https://sensora.in/sitemap.xml

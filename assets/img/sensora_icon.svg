@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sensoraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="#18151f" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <path d="M68 28C63.5 24 57 22 50 22C36 22 28 30 28 40C28 54 50 52 50 62C50 67 44 70 37 70C30 70 24 65.5 22 60" stroke="url(#sensoraGrad)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M32 72C36.5 76 43 78 50 78C64 78 72 70 72 60C72 46 50 48 50 38C50 33 56 30 63 30C70 30 76 34.5 78 40" stroke="url(#sensoraGrad)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="50" cy="50" r="5" fill="#f43f5e"/>
+</svg>

@@ -1,4 +1,10 @@
 {
-  "dependencies": {
-  }
+  "name": "sensora-website",
+  "version": "1.0.0",
+  "description": "Sensora - Health Marketing & Business Growth Website",
+  "scripts": {
+    "start": "python server.py",
+    "dev": "python server.py"
+  },
+  "dependencies": {}
 }

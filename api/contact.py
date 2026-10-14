@@ -8,10 +8,10 @@ from urllib.parse import parse_qs
 from jinja2 import Template
 
 # --- CONFIGURATION ---
-SENDER_EMAIL = "founder@mlarcai.com"
+SENDER_EMAIL = "hello@sensora.co.in"
 APP_PASSWORD = "uoxd hdix lwqf ttfg"
 CALENDLY_LINK = "https://calendly.com/imsunnystark/30min"
-DISPLAY_NAME = "Sani | ML Arc - AI Software Agency"
+DISPLAY_NAME = "Sani | Sensora - Health Marketing & Business Growth"
 
 EMAIL_TEMPLATE = """
 <!DOCTYPE html>
@@ -19,43 +19,43 @@ EMAIL_TEMPLATE = """
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to ML Arc - AI Software Agency</title>
+    <title>Welcome to Sensora - Health Marketing & Business Growth</title>
     <style>
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f2f5; }
         .container { max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border: 1px solid #e1e4e8; }
-        .header { background: linear-gradient(135deg, #1034A6 0%, #0a2375 100%); color: #ffffff; padding: 50px 30px; text-align: center; }
+        .header { background: linear-gradient(135deg, #E06196 0%, #8B0029 100%); color: #ffffff; padding: 50px 30px; text-align: center; }
         .header h1 { margin: 0; font-size: 32px; letter-spacing: 1px; font-weight: 700; margin-bottom: 10px; }
         .header p { margin: 0; font-size: 16px; opacity: 0.9; font-weight: 300; }
         .content { padding: 40px 30px; }
         .section { margin-bottom: 35px; }
-        .h-accent { color: #1034A6; font-size: 22px; font-weight: 600; margin-bottom: 15px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
-        .highlight-box { background-color: #f8fbfd; border-radius: 8px; padding: 25px; border-left: 5px solid #1034A6; margin-bottom: 30px; }
+        .h-accent { color: #E06196; font-size: 22px; font-weight: 600; margin-bottom: 15px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
+        .highlight-box { background-color: #f8fbfd; border-radius: 8px; padding: 25px; border-left: 5px solid #E06196; margin-bottom: 30px; }
         .service-list { list-style: none; padding: 0; margin: 0; }
         .service-item { display: flex; margin-bottom: 15px; align-items: flex-start; }
-        .check-icon { color: #1034A6; margin-right: 12px; font-weight: bold; font-size: 18px; }
+        .check-icon { color: #E06196; margin-right: 12px; font-weight: bold; font-size: 18px; }
         .button-container { text-align: center; margin-top: 40px; margin-bottom: 20px; }
-        .button { display: inline-block; padding: 18px 36px; background-color: #1034A6; color: #ffffff !important; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; font-size: 16px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(16, 52, 166, 0.3); }
-        .button:hover { background-color: #0d2b8a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 52, 166, 0.4); }
+        .button { display: inline-block; padding: 18px 36px; background-color: #E06196; color: #ffffff !important; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; font-size: 16px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(224, 97, 150, 0.3); }
+        .button:hover { background-color: #0d2b8a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224, 97, 150, 0.4); }
         .footer { background-color: #f9f9f9; padding: 30px; text-align: center; font-size: 13px; color: #666; border-top: 1px solid #eee; }
-        .footer a { color: #1034A6; text-decoration: none; font-weight: 500; }
-        strong { color: #1034A6; }
+        .footer a { color: #E06196; text-decoration: none; font-weight: 500; }
+        strong { color: #E06196; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>ML Arc - AI Software Agency</h1>
+            <h1>Sensora - Health Marketing & Business Growth</h1>
             <p>Illuminating Your Path to Automation</p>
         </div>
         <div class="content">
             <div class="section">
                 <h2>Hello {{ name }},</h2>
-                <p>Thank you for choosing ML Arc - AI Software Agency. We have successfully received your inquiry regarding <strong>{{ industry }}</strong> solutions.</p>
+                <p>Thank you for choosing Sensora - Health Marketing & Business Growth. We have successfully received your inquiry regarding <strong>{{ industry }}</strong> solutions.</p>
                 <p>You’ve taken the first step towards transforming your business operations. Our team is currently reviewing your details to tailor a strategy that aligns with your goals.</p>
             </div>
             
             <div class="highlight-box">
-                <h3 style="margin-top: 0; color: #1034A6;">What Happens Next?</h3>
+                <h3 style="margin-top: 0; color: #E06196;">What Happens Next?</h3>
                 <p style="margin-bottom: 0;">1. <strong>Analysis:</strong> We analyze your requirements against our AI frameworks.<br>
                 2. <strong>Strategy:</strong> We identify the highest-ROI automation opportunities for you.<br>
                 3. <strong>Connect:</strong> A specialist will reach out within 24 hours to schedule a deep-dive.</p>
@@ -78,9 +78,9 @@ EMAIL_TEMPLATE = """
             </div>
         </div>
         <div class="footer">
-            <p>&copy; 2026 ML Arc - AI Software Agency. All rights reserved.</p>
-            <p>Hyderabad, India | +91 70216 28334</p>
-            <p style="margin-top: 10px;"><a href="https://moonlitarc.vercel.app">Visit Our Website</a> | <a href="mailto:founder@mlarcai.com">Email Support</a></p>
+            <p>&copy; 2026 Sensora - Health Marketing & Business Growth. All rights reserved.</p>
+            <p>Hyderabad, India | +91 8356918580</p>
+            <p style="margin-top: 10px;"><a href="https://sensora.in">Visit Our Website</a> | <a href="mailto:hello@sensora.co.in">Email Support</a></p>
         </div>
     </div>
 </body>
@@ -121,7 +121,7 @@ class handler(BaseHTTPRequestHandler):
             # 1. Send Welcome Email to Lead
             self.send_email_smtp(
                 to_email=email,
-                subject="Welcome to ML Arc - AI Software Agency - Your AI Transformation Starts Here",
+                subject="Welcome to Sensora - Health Marketing & Business Growth - Your AI Transformation Starts Here",
                 body_html=Template(EMAIL_TEMPLATE).render(name=name, industry=industry, calendly_link=CALENDLY_LINK)
             )
 

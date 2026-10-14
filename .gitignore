@@ -65,3 +65,11 @@ yarn.lock
 *.key
 secrets/
 credentials/
+
+# Temporary text dumps
+catalogues_dump.txt
+docx_paragraphs.txt
+docx_text.txt
+upgrade_brief.txt
+*Catalogue.txt
+

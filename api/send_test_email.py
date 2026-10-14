@@ -9,7 +9,7 @@ from contact import SENDER_EMAIL, APP_PASSWORD, DISPLAY_NAME, EMAIL_TEMPLATE, CA
 
 def send_test_email():
     to_email = "sanivarada@gmail.com"
-    subject = "Welcome to ML Arc - AI Software Agency - Test Email (Comprehensive)"
+    subject = "Welcome to Sensora - Health Marketing & Business Growth - Test Email (Comprehensive)"
     
     print(f"Sending email to {to_email}...")
     
