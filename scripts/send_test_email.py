@@ -4,8 +4,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from jinja2 import Template
 
-# Import configuration from contact.py
-from contact import SENDER_EMAIL, APP_PASSWORD, DISPLAY_NAME, EMAIL_TEMPLATE, CALENDLY_LINK
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Import configuration from api.contact
+from api.contact import SENDER_EMAIL, APP_PASSWORD, DISPLAY_NAME, EMAIL_TEMPLATE, CALENDLY_LINK
 
 def send_test_email():
     to_email = "sanivarada@gmail.com"

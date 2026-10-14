@@ -1,0 +1,18 @@
+# Development server
+dev_server.py
+server.py
+
+# Scripts and tools
+scripts/
+generate_solutions.py
+index_now.py
+add_apollo_script.py
+add_tawk_to.py
+
+# Reference documents
+*.pdf
+*.docx
+*.txt
+
+# Components dev demo files
+components/

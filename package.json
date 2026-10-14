@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Sensora - Health Marketing & Business Growth Website",
   "scripts": {
-    "start": "python server.py",
-    "dev": "python server.py"
+    "start": "python dev_server.py",
+    "dev": "python dev_server.py"
   },
   "dependencies": {}
 }

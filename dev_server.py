@@ -48,5 +48,10 @@ def run(port=PORT):
                 continue
             raise
 
+# Export handler and app for compatibility
+handler = DevServerHandler
+app = DevServerHandler
+
 if __name__ == '__main__':
     run()
+
