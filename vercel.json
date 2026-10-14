@@ -4,6 +4,10 @@
     {
       "source": "/api/contact",
       "destination": "/api/contact.py"
+    },
+    {
+      "source": "/api",
+      "destination": "/api/index.py"
     }
   ]
 }

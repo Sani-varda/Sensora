@@ -5,7 +5,18 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import parse_qs
-from jinja2 import Template
+try:
+    from jinja2 import Template
+except ImportError:
+    class Template:
+        def __init__(self, template_str):
+            self.template_str = template_str
+
+        def render(self, **kwargs):
+            res = self.template_str
+            for k, v in kwargs.items():
+                res = res.replace(f"{{{{ {k} }}}}", str(v)).replace(f"{{{{{k}}}}}", str(v))
+            return res
 
 # --- CONFIGURATION ---
 SENDER_EMAIL = "hello@sensora.co.in"
@@ -184,3 +195,6 @@ class handler(BaseHTTPRequestHandler):
             server.starttls()
             server.login(SENDER_EMAIL, APP_PASSWORD)
             server.send_message(msg)
+
+app = handler
+application = handler
