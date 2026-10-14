@@ -88,21 +88,42 @@ EMAIL_TEMPLATE = """
 """
 
 class handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.end_headers()
+        response = {
+            "status": "healthy",
+            "service": "Sensora Contact API",
+            "message": "Endpoint is active. Submit POST requests to send inquiries."
+        }
+        self.wfile.write(json.dumps(response).encode('utf-8'))
+
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
+
     def do_POST(self):
-        content_length = int(self.headers['Content-Length'])
-        post_data = self.rfile.read(content_length).decode('utf_8')
+        content_length = int(self.headers.get('Content-Length', 0))
+        post_data = self.rfile.read(content_length).decode('utf-8') if content_length > 0 else ""
         
         # Parse data (handling both JSON and Form Encoded)
         try:
             content_type = self.headers.get('Content-Type', '')
             if 'application/json' in content_type:
-                data = json.loads(post_data)
+                data = json.loads(post_data) if post_data else {}
             else:
                 data = {k: v[0] for k, v in parse_qs(post_data).items()}
         except Exception as e:
             self.send_response(400)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(f"Error parsing data: {str(e)}".encode())
+            self.wfile.write(json.dumps({"error": f"Error parsing data: {str(e)}"}).encode('utf-8'))
             return
 
         name = data.get('full-name') or data.get('name', 'there')
@@ -113,8 +134,10 @@ class handler(BaseHTTPRequestHandler):
 
         if not email:
             self.send_response(400)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(b"Email is required")
+            self.wfile.write(json.dumps({"error": "Email is required"}).encode('utf-8'))
             return
 
         try:
@@ -135,13 +158,16 @@ class handler(BaseHTTPRequestHandler):
 
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "success", "message": "Emails sent successfully"}).encode())
+            self.wfile.write(json.dumps({"status": "success", "message": "Emails sent successfully"}).encode('utf-8'))
 
         except Exception as e:
             self.send_response(500)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(f"Error sending email: {str(e)}".encode())
+            self.wfile.write(json.dumps({"error": f"Error sending email: {str(e)}"}).encode('utf-8'))
 
     def send_email_smtp(self, to_email, subject, body_html=None, body_text=None):
         msg = MIMEMultipart("alternative")

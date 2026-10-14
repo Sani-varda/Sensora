@@ -13,6 +13,14 @@ except Exception as e:
 PORT = 8000
 
 class DevServerHandler(SimpleHTTPRequestHandler):
+    def do_OPTIONS(self):
+        parsed = urlparse(self.path)
+        if parsed.path.rstrip('/') == '/api/contact' and ContactHandler:
+            ContactHandler.do_OPTIONS(self)
+        else:
+            self.send_response(200)
+            self.end_headers()
+
     def do_POST(self):
         parsed = urlparse(self.path)
         if parsed.path.rstrip('/') == '/api/contact' and ContactHandler:
@@ -22,6 +30,10 @@ class DevServerHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
+        if parsed.path.rstrip('/') == '/api/contact' and ContactHandler:
+            ContactHandler.do_GET(self)
+            return
+
         local_path = self.translate_path(self.path)
 
         # If direct path does not exist, check if appending .html matches a file
