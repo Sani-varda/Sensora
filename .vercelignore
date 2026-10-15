@@ -13,10 +13,15 @@ index_now.py
 add_apollo_script.py
 add_tawk_to.py
 
-# Reference documents
+# Reference documents and scratch dumps
 *.pdf
 *.docx
-*.txt
+*Catalogue.txt
+*dump.txt
+docx_*.txt
+upgrade_brief.txt
+!robots.txt
+!5b76e54cf5884465a14d1fb9c32d481d.txt
 
 # Components dev demo files
 components/

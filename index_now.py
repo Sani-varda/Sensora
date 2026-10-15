@@ -28,10 +28,13 @@ def get_urls_from_sitemap(sitemap_path):
 
 def submit_to_index_now(url_list, host, key, key_location=None):
     """
-    Submits a list of URLs to the IndexNow API (Bing/Yandex).
+    Submits a list of URLs to IndexNow APIs (IndexNow.org, Bing, Yandex).
     Uses standard library urllib for zero-dependency execution.
     """
-    endpoint = "https://api.indexnow.org/IndexNow"
+    endpoints = [
+        ("IndexNow Central", "https://api.indexnow.org/IndexNow"),
+        ("Bing Direct", "https://www.bing.com/indexnow")
+    ]
     
     payload = {
         "host": host,
@@ -41,34 +44,38 @@ def submit_to_index_now(url_list, host, key, key_location=None):
     }
     
     data = json.dumps(payload).encode('utf-8')
-    req = urllib.request.Request(
-        endpoint,
-        data=data,
-        headers={
-            "Content-Type": "application/json; charset=utf-8",
-            "User-Agent": "Sensora-IndexNow-Client/1.0"
-        },
-        method="POST"
-    )
     
-    try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            status_code = response.status
-            if status_code in [200, 202]:
-                status_msg = "Successfully submitted" if status_code == 200 else "Submitted successfully (HTTP 202 - verification in progress)"
-                print(f"{status_msg} {len(url_list)} URLs to IndexNow (Bing & Yandex).")
-                for url in url_list:
-                    print(f"  - {url}")
-            else:
-                print(f"Received status code: {status_code}")
-    except urllib.error.HTTPError as e:
-        print(f"IndexNow HTTP Error: {e.code} - {e.reason}")
+    for name, endpoint in endpoints:
+        req = urllib.request.Request(
+            endpoint,
+            data=data,
+            headers={
+                "Content-Type": "application/json; charset=utf-8",
+                "User-Agent": "Sensora-IndexNow-Client/1.0"
+            },
+            method="POST"
+        )
+        
         try:
-            print(e.read().decode('utf-8'))
-        except Exception:
-            pass
-    except Exception as e:
-        print(f"IndexNow connection error: {e}")
+            with urllib.request.urlopen(req, timeout=15) as response:
+                status_code = response.status
+                if status_code in [200, 202]:
+                    status_msg = "Accepted (HTTP 200)" if status_code == 200 else "Accepted (HTTP 202 - verification in progress)"
+                    print(f"[{name}] {status_msg} for {len(url_list)} URLs.")
+                else:
+                    print(f"[{name}] Status: {status_code}")
+        except urllib.error.HTTPError as e:
+            print(f"[{name}] HTTP Error: {e.code} - {e.reason}")
+            try:
+                print(e.read().decode('utf-8'))
+            except Exception:
+                pass
+        except Exception as e:
+            print(f"[{name}] Connection error: {e}")
+            
+    print(f"\nIndexed {len(url_list)} URLs across search engines:")
+    for url in url_list:
+        print(f"  - {url}")
 
 if __name__ == "__main__":
     MY_HOST = "sensora.co.in"
