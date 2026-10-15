@@ -1,5 +1,5 @@
 # Sensora Robots.txt
-# Website: https://sensora.in
+# Website: https://sensora.co.in
 # Description: Production crawler and indexing policy for Sensora Strategic Growth & Marketing
 
 User-agent: *
@@ -95,5 +95,5 @@ User-agent: Bytespider
 Allow: /
 
 # XML Sitemap
-Sitemap: https://sensora.in/sitemap.xml
-Host: https://sensora.in
+Sitemap: https://sensora.co.in/sitemap.xml
+Host: https://sensora.co.in

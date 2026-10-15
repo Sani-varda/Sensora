@@ -71,7 +71,7 @@ def submit_to_index_now(url_list, host, key, key_location=None):
         print(f"IndexNow connection error: {e}")
 
 if __name__ == "__main__":
-    MY_HOST = "sensora.in"
+    MY_HOST = "sensora.co.in"
     MY_KEY = "5b76e54cf5884465a14d1fb9c32d481d"
     
     sitemap_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")

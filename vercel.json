@@ -1,5 +1,40 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sensora.in"
+        }
+      ],
+      "destination": "https://sensora.co.in/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sensora.in"
+        }
+      ],
+      "destination": "https://sensora.co.in/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sensora.co.in"
+        }
+      ],
+      "destination": "https://sensora.co.in/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/contact",
