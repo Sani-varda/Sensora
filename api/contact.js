@@ -1,7 +1,8 @@
 const nodemailer = require('nodemailer');
 
-const SENDER_EMAIL = 'hello@sensora.co.in';
+const SMTP_USER = 'imsunnystark@gmail.com';
 const APP_PASSWORD = 'uoxd hdix lwqf ttfg';
+const NOTIFICATION_RECIPIENT = 'hello@sensora.co.in';
 const CALENDLY_LINK = 'https://calendly.com/imsunnystark/30min';
 const DISPLAY_NAME = 'Sensora | Strategic Growth & Health Marketing';
 
@@ -126,24 +127,26 @@ module.exports = async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: SENDER_EMAIL,
+        user: SMTP_USER,
         pass: APP_PASSWORD
       }
     });
 
     // 1. Send Welcome Email to Lead
     await transporter.sendMail({
-      from: `"${DISPLAY_NAME}" <${SENDER_EMAIL}>`,
+      from: `"${DISPLAY_NAME}" <${NOTIFICATION_RECIPIENT}>`,
+      replyTo: NOTIFICATION_RECIPIENT,
       to: email,
       subject: 'Thank You for Contacting Sensora | Strategic Growth & Health Marketing',
       html: getEmailTemplate(name, industry, CALENDLY_LINK)
     });
 
     // 2. Send Notification to Admin at hello@sensora.co.in
-    const adminBody = `New Inquiry via sensora.co.in/contact.html\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\nObjective / Focus: ${industry}\nMessage:\n${message}\n\nRouted to: ${SENDER_EMAIL}`;
+    const adminBody = `New Inquiry via sensora.co.in\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\nObjective / Focus: ${industry}\nMessage:\n${message}\n\nRouted directly to: ${NOTIFICATION_RECIPIENT}`;
     await transporter.sendMail({
-      from: `"${DISPLAY_NAME}" <${SENDER_EMAIL}>`,
-      to: SENDER_EMAIL,
+      from: `"${DISPLAY_NAME}" <${SMTP_USER}>`,
+      replyTo: email,
+      to: NOTIFICATION_RECIPIENT,
       subject: `New Lead Inquiry: ${name} (${company}) - Sensora`,
       text: adminBody
     });

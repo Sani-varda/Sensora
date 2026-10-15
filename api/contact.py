@@ -19,8 +19,9 @@ except ImportError:
             return res
 
 # --- CONFIGURATION ---
-SENDER_EMAIL = "hello@sensora.co.in"
+SMTP_USER = "imsunnystark@gmail.com"
 APP_PASSWORD = "uoxd hdix lwqf ttfg"
+NOTIFICATION_RECIPIENT = "hello@sensora.co.in"
 CALENDLY_LINK = "https://calendly.com/imsunnystark/30min"
 DISPLAY_NAME = "Sensora | Strategic Growth & Health Marketing"
 
@@ -98,6 +99,25 @@ EMAIL_TEMPLATE = """
 </html>
 """
 
+def send_email_smtp(to_email, subject, body_html=None, body_text=None, reply_to=None):
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = subject
+    msg["From"] = f"{DISPLAY_NAME} <{SMTP_USER}>"
+    msg["To"] = to_email
+    if reply_to:
+        msg["Reply-To"] = reply_to
+    else:
+        msg["Reply-To"] = NOTIFICATION_RECIPIENT
+
+    if body_text:
+        msg.attach(MIMEText(body_text, "plain"))
+    if body_html:
+        msg.attach(MIMEText(body_html, "html"))
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=12) as server:
+        server.login(SMTP_USER, APP_PASSWORD)
+        server.send_message(msg)
+
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -154,25 +174,27 @@ class handler(BaseHTTPRequestHandler):
 
         try:
             # 1. Send Welcome Email to Lead
-            self.send_email_smtp(
+            send_email_smtp(
                 to_email=email,
                 subject="Thank You for Contacting Sensora | Strategic Growth & Health Marketing",
-                body_html=Template(EMAIL_TEMPLATE).render(name=name, industry=industry, calendly_link=CALENDLY_LINK)
+                body_html=Template(EMAIL_TEMPLATE).render(name=name, industry=industry, calendly_link=CALENDLY_LINK),
+                reply_to=NOTIFICATION_RECIPIENT
             )
 
             # 2. Send Notification to Admin (Routed to hello@sensora.co.in)
-            admin_body = f"New Inquiry via sensora.co.in/contact.html\n\nName: {name}\nEmail: {email}\nCompany: {company}\nPhone: {phone}\nObjective / Focus: {industry}\nMessage:\n{message}\n\nRouted to: {SENDER_EMAIL}"
-            self.send_email_smtp(
-                to_email=SENDER_EMAIL,
+            admin_body = f"New Inquiry via sensora.co.in\n\nName: {name}\nEmail: {email}\nCompany: {company}\nPhone: {phone}\nObjective / Focus: {industry}\nMessage:\n{message}\n\nRouted directly to: {NOTIFICATION_RECIPIENT}"
+            send_email_smtp(
+                to_email=NOTIFICATION_RECIPIENT,
                 subject=f"New Lead Inquiry: {name} ({company}) - Sensora",
-                body_text=admin_body
+                body_text=admin_body,
+                reply_to=email
             )
 
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "success", "message": "Emails sent successfully"}).encode('utf-8'))
+            self.wfile.write(json.dumps({"status": "success", "message": f"Emails sent successfully to {NOTIFICATION_RECIPIENT}"}).encode('utf-8'))
 
         except Exception as e:
             self.send_response(500)
@@ -181,21 +203,7 @@ class handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"error": f"Error sending email: {str(e)}"}).encode('utf-8'))
 
-    def send_email_smtp(self, to_email, subject, body_html=None, body_text=None):
-        msg = MIMEMultipart("alternative")
-        msg["Subject"] = subject
-        msg["From"] = f"{DISPLAY_NAME} <{SENDER_EMAIL}>"
-        msg["To"] = to_email
-
-        if body_text:
-            msg.attach(MIMEText(body_text, "plain"))
-        if body_html:
-            msg.attach(MIMEText(body_html, "html"))
-
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.starttls()
-            server.login(SENDER_EMAIL, APP_PASSWORD)
-            server.send_message(msg)
+    send_email_smtp = staticmethod(send_email_smtp)
 
 app = handler
-application = handler
+application = handler = handler

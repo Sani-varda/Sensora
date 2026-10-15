@@ -156,7 +156,8 @@ function handleQuickOption(key) {
   setTimeout(() => {
     removeThinking();
     if (key === "consultation") {
-      startLeadCapture();
+      const cardHtml = presentConsultationOptions();
+      appendMessage(cardHtml, "bot");
     } else {
       const response = generateFAQResponse(userText);
       appendMessage(response, "bot");
@@ -257,15 +258,73 @@ function generateFAQResponse(text) {
       You can also reach our leadership desk directly at <a href="mailto:hello@sensora.co.in" style="color: #E06196; font-weight: 700;">hello@sensora.co.in</a> or +91 8356918580.`;
   }
 
-  // 12. Consultation / Contact / Schedule
-  if (q.includes("contact") || q.includes("audit") || q.includes("consult") || q.includes("book") || q.includes("call") || q.includes("schedule") || q.includes("talk") || q.includes("speak") || q.includes("hello")) {
-    startLeadCapture();
-    return "I would be happy to coordinate a <strong>20-Minute Strategic Consultation</strong> with our leadership team! Let's get a few quick details to personalize your session.";
+  // Greetings
+  if (q === "hello" || q === "hi" || q === "hey" || q === "help" || q.startsWith("hi ") || q.startsWith("hello ") || q.startsWith("hey ")) {
+    return `Hello! Welcome to <strong>Sensora</strong>.<br><br>I can guide you through our specialized growth frameworks: <strong>Patient360™ (Healthcare)</strong>, <strong>B2B Demand Engine™</strong>, <strong>Admission360™ (Education)</strong>, and <strong>Startup Launch360™</strong>.<br><br>You can ask any question, or select <strong>Book 20-Min Consultation</strong> to speak directly with our strategic leadership team.`;
+  }
+
+  // 12. Consultation / Contact / Schedule / Book
+  if (q.includes("consult") || q.includes("book") || q.includes("schedule") || q.includes("appointment") || q.includes("call") || q.includes("contact") || q.includes("talk") || q.includes("speak") || q.includes("reach") || q.includes("audit")) {
+    return presentConsultationOptions();
   }
 
   // Fallback with smart guidance
   return `That is a great inquiry! Sensora specializes in <strong>Patient360™ Healthcare Marketing</strong>, <strong>B2B Demand Engines</strong>, <strong>Admission360™</strong>, and <strong>90-Day Growth Sprints</strong>.<br><br>
-    Select one of the quick options below, or click <strong>Book 20-Min Consultation</strong> to have our directors review your brief directly at <a href="mailto:hello@sensora.co.in" style="color: #E06196; font-weight: 700;">hello@sensora.co.in</a>.`;
+    Select one of the quick options below, or click <strong>Book 20-Min Consultation</strong> to route your brief directly to our directors at <a href="mailto:hello@sensora.co.in" style="color: #E06196; font-weight: 700;">hello@sensora.co.in</a>.`;
+}
+
+// DYNAMIC CONTACT LINK HELPER
+function getContactPageUrl() {
+  return window.location.pathname.includes('/solutions/') ? '../contact.html#book' : 'contact.html#book';
+}
+
+// INTERACTIVE CONSULTATION OPTIONS CARD
+function presentConsultationOptions() {
+  const contactUrl = getContactPageUrl();
+  const mailtoSubject = encodeURIComponent("20-Minute Strategic Consultation Request - Sensora");
+  const mailtoBody = encodeURIComponent(
+    "Hello Sensora Leadership Team,\n\n" +
+    "I would like to schedule a 20-minute strategic consultation.\n\n" +
+    "Name: \n" +
+    "Company / Organization: \n" +
+    "Contact Number: \n" +
+    "Primary Focus (Patient360 / B2B Demand / Admission360 / Startup / Other): \n" +
+    "Current Priorities & Growth Goals: \n\n" +
+    `Source: ${window.location.href}`
+  );
+  const mailtoUrl = `mailto:hello@sensora.co.in?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+  return `
+    <div class="cs-consultation-card">
+      <div class="cs-consult-badge">STRATEGIC GROWTH DESK</div>
+      <h4 class="cs-consult-title">Book a 20-Minute Consultation</h4>
+      <p class="cs-consult-desc">
+        Connect directly with Sensora's leadership team. Select how you would like to route your enquiry:
+      </p>
+
+      <div class="cs-consult-actions">
+        <a href="${mailtoUrl}" class="cs-consult-action-btn primary-action">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Email hello@sensora.co.in Directly &rarr;</span>
+        </a>
+
+        <a href="${contactUrl}" class="cs-consult-action-btn secondary-action">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Open Web Inquiry Form &nearr;</span>
+        </a>
+
+        <a href="https://calendly.com/imsunnystark/30min" target="_blank" rel="noopener" class="cs-consult-action-btn tertiary-action">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Schedule on Priority Calendar &nearr;</span>
+        </a>
+
+        <button type="button" onclick="startLeadCapture()" class="cs-consult-action-btn chat-action">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>Share Details in Chat (Auto-Route) &darr;</span>
+        </button>
+      </div>
+    </div>
+  `;
 }
 
 // LEAD CAPTURE & DISPATCH TO hello@sensora.co.in
@@ -276,7 +335,9 @@ function startLeadCapture() {
   const quickOptions = document.getElementById("cs-chatbot-quick-options");
   if (quickOptions) quickOptions.style.display = "none";
 
-  appendMessage("To get started, <strong>what is your full name?</strong>", "bot");
+  appendMessage("Let's personalize your session. To get started, <strong>what is your full name?</strong>", "bot");
+  const input = document.getElementById("cs-chatbot-input-field");
+  if (input) input.focus();
 }
 
 function processLeadStep(userText) {
@@ -321,8 +382,21 @@ function processLeadStep(userText) {
 
     simulateThinking();
 
+    const lead = chatbotState.leadData;
+    const mailtoSubject = encodeURIComponent(`Consultation Inquiry: ${lead.name} (${lead.company || 'Not Provided'})`);
+    const mailtoBody = encodeURIComponent(
+      `Consultation Inquiry via Sensora Website Chatbot\n\n` +
+      `Name: ${lead.name}\n` +
+      `Work Email: ${lead.email}\n` +
+      `Company / Institution: ${lead.company || 'N/A'}\n` +
+      `Growth Priorities & Bottlenecks:\n${lead.needs}\n\n` +
+      `Source Page: ${window.location.href}\n` +
+      `Timestamp: ${new Date().toLocaleString()}`
+    );
+    const mailtoUrl = `mailto:hello@sensora.co.in?subject=${mailtoSubject}&body=${mailtoBody}`;
+
     // Dispatch lead immediately to hello@sensora.co.in via /api/contact
-    dispatchLeadToSensora(chatbotState.leadData)
+    dispatchLeadToSensora(lead)
       .then(() => {
         removeThinking();
         appendMessage(`
@@ -334,19 +408,37 @@ function processLeadStep(userText) {
               </svg>
             </div>
             <div class="cs-success-text">
-              <h5 style="color: #0F172A; font-weight: 800; margin: 0 0 6px; font-size: 1rem;">Inquiry Routed Successfully!</h5>
-              <p style="color: #475569; margin: 0; font-size: 0.88rem; line-height: 1.55;">
-                Thank you, <strong>${chatbotState.leadData.name}</strong>. Your consultation brief has been securely routed to our growth desk at <strong style="color: #E06196;">hello@sensora.co.in</strong>. A senior director will review your requirements and reach out within 24 hours.
+              <h5 style="color: #0F172A; font-weight: 800; margin: 0 0 6px; font-size: 1rem;">Enquiry Routed to hello@sensora.co.in!</h5>
+              <p style="color: #475569; margin: 0 0 14px; font-size: 0.88rem; line-height: 1.55;">
+                Thank you, <strong>${lead.name}</strong>. Your consultation brief has been securely routed to our growth desk at <strong style="color: #E06196;">hello@sensora.co.in</strong>. A senior strategist will review and connect with you within 24 hours.
               </p>
+              <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                <a href="${mailtoUrl}" class="cs-consult-action-btn primary-action" style="text-align: center; justify-content: center;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>Launch Direct Email Client &rarr;</span>
+                </a>
+                <a href="https://calendly.com/imsunnystark/30min" target="_blank" rel="noopener" class="cs-consult-action-btn tertiary-action" style="text-align: center; justify-content: center;">
+                  <span>Fast-Track: Pick a Calendar Slot &nearr;</span>
+                </a>
+              </div>
             </div>
           </div>
         `, "bot");
+
+        // Automatically redirect to mailto after short delay
+        setTimeout(() => {
+          try {
+            window.location.href = mailtoUrl;
+          } catch (e) {
+            console.log("Redirect fallback handled");
+          }
+        }, 1600);
 
         setTimeout(() => {
           const quickOptions = document.getElementById("cs-chatbot-quick-options");
           if (quickOptions) quickOptions.style.display = "flex";
           scrollToBottom();
-        }, 1200);
+        }, 2200);
       })
       .catch((err) => {
         console.warn("[Sensora Chatbot] Network dispatch note:", err);
@@ -360,19 +452,29 @@ function processLeadStep(userText) {
               </svg>
             </div>
             <div class="cs-success-text">
-              <h5 style="color: #0F172A; font-weight: 800; margin: 0 0 6px; font-size: 1rem;">Inquiry Confirmed!</h5>
-              <p style="color: #475569; margin: 0; font-size: 0.88rem; line-height: 1.55;">
-                Thank you, <strong>${chatbotState.leadData.name}</strong>. Your consultation details have been recorded and prioritized for our leadership desk at <strong style="color: #E06196;">hello@sensora.co.in</strong>. We will be in touch promptly.
+              <h5 style="color: #0F172A; font-weight: 800; margin: 0 0 6px; font-size: 1rem;">Redirecting to hello@sensora.co.in</h5>
+              <p style="color: #475569; margin: 0 0 14px; font-size: 0.88rem; line-height: 1.55;">
+                Thank you, <strong>${lead.name}</strong>. Opening your email client to send your enquiry directly to <strong style="color: #E06196;">hello@sensora.co.in</strong>.
               </p>
+              <a href="${mailtoUrl}" class="cs-consult-action-btn primary-action" style="text-align: center; justify-content: center;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>Click here to send to hello@sensora.co.in &rarr;</span>
+              </a>
             </div>
           </div>
         `, "bot");
 
         setTimeout(() => {
+          try {
+            window.location.href = mailtoUrl;
+          } catch (e) {}
+        }, 1200);
+
+        setTimeout(() => {
           const quickOptions = document.getElementById("cs-chatbot-quick-options");
           if (quickOptions) quickOptions.style.display = "flex";
           scrollToBottom();
-        }, 1200);
+        }, 2200);
       });
   }
 }
@@ -388,8 +490,8 @@ async function dispatchLeadToSensora(lead) {
     "full-name": lead.name,
     "email": lead.email,
     "company": lead.company || "Not Provided",
-    "project": lead.needs ? "Chatbot: " + lead.needs.substring(0, 60) : "Website Chatbot Lead",
-    "message": `New Lead via Sensora Website Chatbot\n\nName: ${lead.name}\nEmail: ${lead.email}\nCompany: ${lead.company}\nGoals & Challenges: ${lead.needs}\nSource Page: ${window.location.href}\nTimestamp: ${new Date().toISOString()}`
+    "project": lead.needs ? "Chatbot Consultation: " + lead.needs.substring(0, 60) : "Website Chatbot Consultation",
+    "message": `New Consultation Enquiry via Sensora Website Chatbot\n\nName: ${lead.name}\nEmail: ${lead.email}\nCompany: ${lead.company || 'N/A'}\nGoals & Challenges: ${lead.needs}\nSource Page: ${window.location.href}\nTimestamp: ${new Date().toISOString()}`
   };
 
   // Local storage backup
@@ -408,6 +510,10 @@ async function dispatchLeadToSensora(lead) {
     },
     body: JSON.stringify(payload)
   });
+
+  if (!response.ok) {
+    throw new Error(`API returned status ${response.status}`);
+  }
 
   return response;
 }
@@ -849,6 +955,102 @@ function injectChatbotStyles() {
     }
     @keyframes fill {
       to { box-shadow: inset 0px 0px 0px 30px rgba(224, 97, 150, 0.1); }
+    }
+
+    /* Consultation Action Card */
+    .cs-consultation-card {
+      background: #FFFFFF;
+      border: 1px solid #FFE4EC;
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 15px rgba(224, 97, 150, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cs-consult-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #E06196;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .cs-consult-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .cs-consult-desc {
+      font-size: 0.82rem;
+      color: #64748B;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .cs-consult-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 4px;
+    }
+    .cs-consult-action-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      line-height: 1.3;
+      border: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .cs-consult-action-btn.primary-action {
+      background: linear-gradient(135deg, #E06196 0%, #B82E6A 100%);
+      color: #FFFFFF !important;
+      box-shadow: 0 3px 10px rgba(224, 97, 150, 0.3);
+    }
+    .cs-consult-action-btn.primary-action:hover {
+      background: linear-gradient(135deg, #C73B75 0%, #9B1C54 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 14px rgba(224, 97, 150, 0.4);
+    }
+    .cs-consult-action-btn.secondary-action {
+      background: #F8FAFC;
+      color: #0F172A !important;
+      border: 1px solid #E2E8F0;
+    }
+    .cs-consult-action-btn.secondary-action:hover {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+      transform: translateY(-1px);
+    }
+    .cs-consult-action-btn.tertiary-action {
+      background: #FFF5F8;
+      color: #B82E6A !important;
+      border: 1px solid #FBCFE8;
+    }
+    .cs-consult-action-btn.tertiary-action:hover {
+      background: #FCE7F3;
+      border-color: #F472B6;
+      transform: translateY(-1px);
+    }
+    .cs-consult-action-btn.chat-action {
+      background: #FFFFFF;
+      color: #475569;
+      border: 1px dashed #CBD5E1;
+      width: 100%;
+      text-align: left;
+    }
+    .cs-consult-action-btn.chat-action:hover {
+      background: #F8FAFC;
+      border-color: #94A3B8;
+      color: #0F172A;
     }
 
     /* Responsive */
