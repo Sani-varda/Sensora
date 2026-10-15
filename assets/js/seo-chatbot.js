@@ -71,12 +71,12 @@ function initializeGrowthChatbot() {
 
       <!-- Quick Option Pills -->
       <div id="cs-chatbot-quick-options">
-        <button class="cs-quick-pill" onclick="handleQuickOption('healthcare')">🏥 Patient360™ (Healthcare)</button>
-        <button class="cs-quick-pill" onclick="handleQuickOption('b2b')">💼 B2B Demand Engine™</button>
-        <button class="cs-quick-pill" onclick="handleQuickOption('sprint')">⚡ 90-Day Build Sprint</button>
-        <button class="cs-quick-pill" onclick="handleQuickOption('pricing')">💰 Retainers &amp; Pricing</button>
-        <button class="cs-quick-pill" onclick="handleQuickOption('compliance')">⚖️ Healthcare Compliance</button>
-        <button class="cs-quick-pill accent-pill" onclick="handleQuickOption('consultation')">✨ Book 20-Min Consultation</button>
+        <button class="cs-quick-pill" onclick="handleQuickOption('healthcare')">Patient360™ (Healthcare)</button>
+        <button class="cs-quick-pill" onclick="handleQuickOption('b2b')">B2B Demand Engine™</button>
+        <button class="cs-quick-pill" onclick="handleQuickOption('sprint')">90-Day Build Sprint</button>
+        <button class="cs-quick-pill" onclick="handleQuickOption('pricing')">Retainers &amp; Pricing</button>
+        <button class="cs-quick-pill" onclick="handleQuickOption('compliance')">Healthcare Compliance</button>
+        <button class="cs-quick-pill accent-pill" onclick="handleQuickOption('consultation')">Book 20-Min Consultation</button>
       </div>
 
       <!-- Input Area -->
@@ -96,7 +96,7 @@ function initializeGrowthChatbot() {
 
   // Send initial welcome message sequence
   sendBotMessageSequence([
-    "Hello! Welcome to <strong>Sensora</strong> 👋",
+    "Hello! Welcome to <strong>Sensora</strong>.",
     "I am your dedicated Growth Advisor. I can guide you through our <strong>Patient360™ Healthcare Engine</strong>, <strong>B2B Demand Engine™</strong>, <strong>90-Day Sprints</strong>, and pricing models.<br><br>How can we accelerate your organization's growth today?"
   ]);
 }
@@ -265,7 +265,7 @@ function generateFAQResponse(text) {
 
   // Fallback with smart guidance
   return `That is a great inquiry! Sensora specializes in <strong>Patient360™ Healthcare Marketing</strong>, <strong>B2B Demand Engines</strong>, <strong>Admission360™</strong>, and <strong>90-Day Growth Sprints</strong>.<br><br>
-    Select one of the quick options below, or click <strong>✨ Book 20-Min Consultation</strong> to have our directors review your brief directly at <a href="mailto:hello@sensora.co.in" style="color: #E06196; font-weight: 700;">hello@sensora.co.in</a>.`;
+    Select one of the quick options below, or click <strong>Book 20-Min Consultation</strong> to have our directors review your brief directly at <a href="mailto:hello@sensora.co.in" style="color: #E06196; font-weight: 700;">hello@sensora.co.in</a>.`;
 }
 
 // LEAD CAPTURE & DISPATCH TO hello@sensora.co.in
