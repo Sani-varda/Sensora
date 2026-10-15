@@ -79,7 +79,7 @@ def submit_to_index_now(url_list, host, key, key_location=None):
 
 if __name__ == "__main__":
     MY_HOST = "sensora.co.in"
-    MY_KEY = "5b76e54cf5884465a14d1fb9c32d481d"
+    MY_KEY = "cafefc4a20634af8e27ca9c7baf99f"
     
     sitemap_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
     

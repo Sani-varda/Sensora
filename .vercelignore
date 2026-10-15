@@ -22,6 +22,7 @@ docx_*.txt
 upgrade_brief.txt
 !robots.txt
 !5b76e54cf5884465a14d1fb9c32d481d.txt
+!cafefc4a20634af8e27ca9c7baf99f.txt
 
 # Components dev demo files
 components/
