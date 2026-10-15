@@ -140,7 +140,7 @@ module.exports = async function handler(req, res) {
     });
 
     // 2. Send Notification to Admin at hello@sensora.co.in
-    const adminBody = `New Inquiry via sensora.in/contact.html\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\nObjective / Focus: ${industry}\nMessage:\n${message}\n\nRouted to: ${SENDER_EMAIL}`;
+    const adminBody = `New Inquiry via sensora.co.in/contact.html\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\nObjective / Focus: ${industry}\nMessage:\n${message}\n\nRouted to: ${SENDER_EMAIL}`;
     await transporter.sendMail({
       from: `"${DISPLAY_NAME}" <${SENDER_EMAIL}>`,
       to: SENDER_EMAIL,

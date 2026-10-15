@@ -161,7 +161,7 @@ class handler(BaseHTTPRequestHandler):
             )
 
             # 2. Send Notification to Admin (Routed to hello@sensora.co.in)
-            admin_body = f"New Inquiry via sensora.in/contact.html\n\nName: {name}\nEmail: {email}\nCompany: {company}\nPhone: {phone}\nObjective / Focus: {industry}\nMessage:\n{message}\n\nRouted to: {SENDER_EMAIL}"
+            admin_body = f"New Inquiry via sensora.co.in/contact.html\n\nName: {name}\nEmail: {email}\nCompany: {company}\nPhone: {phone}\nObjective / Focus: {industry}\nMessage:\n{message}\n\nRouted to: {SENDER_EMAIL}"
             self.send_email_smtp(
                 to_email=SENDER_EMAIL,
                 subject=f"New Lead Inquiry: {name} ({company}) - Sensora",
