@@ -71,7 +71,7 @@ const getEmailTemplate = (name, industry, calendlyLink) => `
         </div>
         <div class="footer">
             <p>&copy; 2026 Sensora - Health Marketing & Business Growth. All rights reserved.</p>
-            <p>Hyderabad, India | +91 8356918580</p>
+            <p>Mumbai, India | +91 8356918580</p>
             <p style="margin-top: 10px;"><a href="https://sensora.co.in">Visit Our Website</a> | <a href="mailto:hello@sensora.co.in">Email Support</a></p>
         </div>
     </div>
