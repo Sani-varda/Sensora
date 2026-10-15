@@ -1,7 +1,56 @@
+# Sensora Robots.txt
+# Website: https://sensora.in
+# Description: Production crawler and indexing policy for Sensora Strategic Growth & Marketing
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /scratch/
+Disallow: /components/
+Disallow: /solution-template.html
+Disallow: /*.json$
 
-# Welcoming AI Search Engines for Citations (GEO 2026)
+# Explicitly Allow Static Assets & Verification Files
+Allow: /assets/
+Allow: /googlevSIxqVDCduk9mYuJgf5UAuVwMrUgdEUDkCyWke3lro8.html
+Allow: /BingSiteAuth.xml
+Allow: /sitemap.xml
+
+# Major Global Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Welcoming AI & Answer Engines for Search Citations (GEO 2026)
 User-agent: GPTBot
 Allow: /
 
@@ -14,25 +63,36 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: applebot-extended
 Allow: /
 
-User-agent: Omgilibot
-Allow: /
-
 User-agent: FacebookBot
 Allow: /
 
-User-agent: Diffbot
+User-agent: Meta-ExternalAgent
 Allow: /
 
 User-agent: Cohere-crawler
 Allow: /
 
-User-agent: Anthropic-ai
+User-agent: Diffbot
 Allow: /
 
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# XML Sitemap
 Sitemap: https://sensora.in/sitemap.xml
+Host: https://sensora.in
