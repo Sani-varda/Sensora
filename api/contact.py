@@ -22,7 +22,7 @@ except ImportError:
 SENDER_EMAIL = "hello@sensora.co.in"
 APP_PASSWORD = "uoxd hdix lwqf ttfg"
 CALENDLY_LINK = "https://calendly.com/imsunnystark/30min"
-DISPLAY_NAME = "Sani | Sensora - Health Marketing & Business Growth"
+DISPLAY_NAME = "Sensora | Strategic Growth & Health Marketing"
 
 EMAIL_TEMPLATE = """
 <!DOCTYPE html>
@@ -140,8 +140,9 @@ class handler(BaseHTTPRequestHandler):
         name = data.get('full-name') or data.get('name', 'there')
         email = data.get('email')
         phone = data.get('number') or data.get('phone', 'N/A')
-        industry = data.get('project') or data.get('industry', 'Automation')
-        message = data.get('message', '')
+        company = data.get('company', 'N/A')
+        industry = data.get('project') or data.get('industry', 'General Strategy')
+        message = data.get('message', 'No additional details provided')
 
         if not email:
             self.send_response(400)
@@ -155,15 +156,15 @@ class handler(BaseHTTPRequestHandler):
             # 1. Send Welcome Email to Lead
             self.send_email_smtp(
                 to_email=email,
-                subject="Welcome to Sensora - Health Marketing & Business Growth - Your AI Transformation Starts Here",
+                subject="Thank You for Contacting Sensora | Strategic Growth & Health Marketing",
                 body_html=Template(EMAIL_TEMPLATE).render(name=name, industry=industry, calendly_link=CALENDLY_LINK)
             )
 
-            # 2. Send Notification to Admin (You)
-            admin_body = f"New Lead: {name}\nEmail: {email}\nPhone: {phone}\nIndustry: {industry}\nMessage: {message}"
+            # 2. Send Notification to Admin (Routed to hello@sensora.co.in)
+            admin_body = f"New Inquiry via sensora.in/contact.html\n\nName: {name}\nEmail: {email}\nCompany: {company}\nPhone: {phone}\nObjective / Focus: {industry}\nMessage:\n{message}\n\nRouted to: {SENDER_EMAIL}"
             self.send_email_smtp(
                 to_email=SENDER_EMAIL,
-                subject=f"New Lead Alert: {name}",
+                subject=f"New Lead Inquiry: {name} ({company}) - Sensora",
                 body_text=admin_body
             )
 

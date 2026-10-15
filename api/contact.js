@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const SENDER_EMAIL = 'hello@sensora.co.in';
 const APP_PASSWORD = 'uoxd hdix lwqf ttfg';
 const CALENDLY_LINK = 'https://calendly.com/imsunnystark/30min';
-const DISPLAY_NAME = 'Sani | Sensora - Health Marketing & Business Growth';
+const DISPLAY_NAME = 'Sensora | Strategic Growth & Health Marketing';
 
 const getEmailTemplate = (name, industry, calendlyLink) => `
 <!DOCTYPE html>
@@ -115,8 +115,9 @@ module.exports = async function handler(req, res) {
     const name = data['full-name'] || data.name || 'there';
     const email = data.email;
     const phone = data.number || data.phone || 'N/A';
-    const industry = data.project || data.industry || 'Automation';
-    const message = data.message || '';
+    const company = data.company || 'N/A';
+    const industry = data.project || data.industry || 'General Strategy';
+    const message = data.message || 'No additional details provided';
 
     if (!email) {
       return res.status(400).json({ error: 'Email is required' });
@@ -134,16 +135,16 @@ module.exports = async function handler(req, res) {
     await transporter.sendMail({
       from: `"${DISPLAY_NAME}" <${SENDER_EMAIL}>`,
       to: email,
-      subject: 'Welcome to Sensora - Health Marketing & Business Growth - Your AI Transformation Starts Here',
+      subject: 'Thank You for Contacting Sensora | Strategic Growth & Health Marketing',
       html: getEmailTemplate(name, industry, CALENDLY_LINK)
     });
 
-    // 2. Send Notification to Admin
-    const adminBody = `New Lead: ${name}\nEmail: ${email}\nPhone: ${phone}\nIndustry: ${industry}\nMessage: ${message}`;
+    // 2. Send Notification to Admin at hello@sensora.co.in
+    const adminBody = `New Inquiry via sensora.in/contact.html\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\nObjective / Focus: ${industry}\nMessage:\n${message}\n\nRouted to: ${SENDER_EMAIL}`;
     await transporter.sendMail({
       from: `"${DISPLAY_NAME}" <${SENDER_EMAIL}>`,
       to: SENDER_EMAIL,
-      subject: `New Lead Alert: ${name}`,
+      subject: `New Lead Inquiry: ${name} (${company}) - Sensora`,
       text: adminBody
     });
 
