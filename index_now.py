@@ -1,7 +1,8 @@
-import requests
 import json
 import xml.etree.ElementTree as ET
 import os
+import urllib.request
+import urllib.error
 
 def get_urls_from_sitemap(sitemap_path):
     """
@@ -14,7 +15,6 @@ def get_urls_from_sitemap(sitemap_path):
     try:
         tree = ET.parse(sitemap_path)
         root = tree.getroot()
-        # Sitemap XML uses namespace http://www.sitemaps.org/schemas/sitemap/0.9
         namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         urls = []
         for url in root.findall('ns:url', namespace):
@@ -29,6 +29,7 @@ def get_urls_from_sitemap(sitemap_path):
 def submit_to_index_now(url_list, host, key, key_location=None):
     """
     Submits a list of URLs to the IndexNow API (Bing/Yandex).
+    Uses standard library urllib for zero-dependency execution.
     """
     endpoint = "https://api.indexnow.org/IndexNow"
     
@@ -39,28 +40,40 @@ def submit_to_index_now(url_list, host, key, key_location=None):
         "urlList": url_list
     }
     
-    headers = {
-        "Content-Type": "application/json; charset=utf-8"
-    }
+    data = json.dumps(payload).encode('utf-8')
+    req = urllib.request.Request(
+        endpoint,
+        data=data,
+        headers={
+            "Content-Type": "application/json; charset=utf-8",
+            "User-Agent": "Sensora-IndexNow-Client/1.0"
+        },
+        method="POST"
+    )
     
     try:
-        response = requests.post(endpoint, data=json.dumps(payload), headers=headers)
-        if response.status_code in [200, 202]:
-            status_msg = "Successfully submitted" if response.status_code == 200 else "Submitted successfully (verification pending)"
-            print(f"{status_msg} {len(url_list)} URLs to IndexNow.")
-            for url in url_list:
-                print(f"  - {url}")
-        else:
-            print(f"Failed to submit to IndexNow. Status code: {response.status_code}")
-            print(response.text)
+        with urllib.request.urlopen(req, timeout=15) as response:
+            status_code = response.status
+            if status_code in [200, 202]:
+                status_msg = "Successfully submitted" if status_code == 200 else "Submitted successfully (HTTP 202 - verification in progress)"
+                print(f"{status_msg} {len(url_list)} URLs to IndexNow (Bing & Yandex).")
+                for url in url_list:
+                    print(f"  - {url}")
+            else:
+                print(f"Received status code: {status_code}")
+    except urllib.error.HTTPError as e:
+        print(f"IndexNow HTTP Error: {e.code} - {e.reason}")
+        try:
+            print(e.read().decode('utf-8'))
+        except Exception:
+            pass
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"IndexNow connection error: {e}")
 
 if __name__ == "__main__":
     MY_HOST = "sensora.in"
     MY_KEY = "5b76e54cf5884465a14d1fb9c32d481d"
     
-    # Path to sitemap.xml in current directory
     sitemap_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sitemap.xml")
     
     print("Extracting URLs from sitemap.xml...")

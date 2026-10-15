@@ -15,6 +15,7 @@ Allow: /assets/
 Allow: /googlevSIxqVDCduk9mYuJgf5UAuVwMrUgdEUDkCyWke3lro8.html
 Allow: /BingSiteAuth.xml
 Allow: /sitemap.xml
+Allow: /5b76e54cf5884465a14d1fb9c32d481d.txt
 
 # Major Global Search Engine Crawlers
 User-agent: Googlebot
