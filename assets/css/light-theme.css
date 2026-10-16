@@ -157,8 +157,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Side Drawer */
 .cs-side_header_in {
-  background-color: #FFFFFF !important;
-  color: #374151 !important;
+  background-color: #fce1e8 !important;
+  color: #000000 !important;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1) !important;
 }
 

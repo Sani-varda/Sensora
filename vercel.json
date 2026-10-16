@@ -36,7 +36,25 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(img|video|fonts)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
