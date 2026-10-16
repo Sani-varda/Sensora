@@ -587,7 +587,7 @@
   transform: translateX(4px);
 }
 
-/* Full-Screen Pink Moving Marquee Block - Tailored Advisory */
+/* Full-Screen Moving Marquee - Pink Font from Image (Poppins), No Background Block */
 .sensora-marquee-fullwidth {
   width: 100vw;
   position: relative;
@@ -595,13 +595,14 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: 45px;
-  background: linear-gradient(90deg, #fce1e8 0%, #fbb7ce 50%, #fce1e8 100%);
-  border-top: 1px solid rgba(112, 11, 30, 0.2);
-  border-bottom: 1px solid rgba(112, 11, 30, 0.2);
-  padding: 16px 0;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  background: transparent !important;
+  border-top: 1px solid rgba(224, 97, 150, 0.22);
+  border-bottom: 1px solid rgba(224, 97, 150, 0.22);
+  padding: 22px 0;
   overflow: hidden;
-  box-shadow: 0 8px 24px -4px rgba(112, 11, 30, 0.1);
+  box-shadow: none !important;
   display: flex;
   align-items: center;
 }
@@ -609,7 +610,7 @@
   display: flex;
   width: max-content;
   white-space: nowrap;
-  animation: sensoraMarqueeScroll 28s linear infinite;
+  animation: sensoraMarqueeScroll 26s linear infinite;
   will-change: transform;
 }
 .sensora-marquee-track:hover {
@@ -631,60 +632,56 @@
 .sensora-marquee-unit {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 0 24px;
+  gap: 18px;
+  padding: 0 30px;
 }
 .sensora-marquee-tag {
-  font-family: monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.82rem;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.85rem);
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #630716;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid rgba(112, 11, 30, 0.22);
+  color: #E06196 !important;
 }
 .sensora-marquee-text {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.92rem;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.75rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #550b0c;
+  letter-spacing: -0.015em;
+  color: #E06196 !important;
 }
 .sensora-marquee-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: monospace, ui-monospace, monospace;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #ffffff !important;
-  background: #700b1e;
-  padding: 7px 16px;
+  color: #FFFFFF !important;
+  background: #E06196;
+  padding: 8px 22px;
   border-radius: 9999px;
   text-decoration: none !important;
-  box-shadow: 0 4px 12px rgba(112, 11, 30, 0.28);
+  box-shadow: 0 4px 14px rgba(224, 97, 150, 0.35);
   transition: transform 0.2s ease, background 0.2s ease;
 }
 .sensora-marquee-btn:hover {
-  background: #3d030e;
-  transform: translateY(-1px);
-  color: #ffffff !important;
+  background: #8B0029;
+  transform: translateY(-2px);
+  color: #FFFFFF !important;
 }
 .sensora-marquee-sep {
-  color: #871126;
-  font-size: 0.95rem;
+  color: #E06196;
+  font-size: 1.3rem;
+  opacity: 0.85;
 }
 .sensora-marquee-dot {
-  color: rgba(112, 11, 30, 0.45);
-  font-size: 1.1rem;
-}
-</style>
+  color: #E06196;
+  font-size: 1.5rem;
+  opacity: 0.55;
+}</style>
 
 <!-- Start What Clients Come To Us For -->
 <section id="client-goals" class="cs-client_goals_section">
@@ -811,72 +808,72 @@
     </div>
   </div>
 
-  <!-- Full-Screen Pink Moving Marquee: Tailored Advisory -->
+  <!-- Full-Screen Transparent Moving Marquee (Pink Poppins Font, No Background Block) -->
   <div class="sensora-marquee-fullwidth">
     <div class="sensora-marquee-track">
       <div class="sensora-marquee-group">
-        <div class="sensora-marquee-unit">
-          <span class="sensora-marquee-tag">Tailored Advisory</span>
-          <span class="sensora-marquee-sep">✦</span>
-          <span class="sensora-marquee-text">Not sure where you fit?</span>
-          <span class="sensora-marquee-dot">•</span>
-          <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
-          <span class="sensora-marquee-dot">•</span>
-          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-          <span class="sensora-marquee-sep">✦</span>
-        </div>
-        <div class="sensora-marquee-unit">
-          <span class="sensora-marquee-tag">Tailored Advisory</span>
-          <span class="sensora-marquee-sep">✦</span>
-          <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
-          <span class="sensora-marquee-dot">•</span>
-          <span class="sensora-marquee-text">Brand • Experience • Growth</span>
-          <span class="sensora-marquee-dot">•</span>
-          <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
-          <span class="sensora-marquee-sep">✦</span>
-        </div>
-        <div class="sensora-marquee-unit">
-          <span class="sensora-marquee-tag">Tailored Advisory</span>
-          <span class="sensora-marquee-sep">✦</span>
-          <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
-          <span class="sensora-marquee-dot">•</span>
-          <span class="sensora-marquee-text">Let's talk roadmap</span>
-          <span class="sensora-marquee-dot">•</span>
-          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-          <span class="sensora-marquee-sep">✦</span>
-        </div>
+      <div class="sensora-marquee-unit">
+        <span class="sensora-marquee-tag">Tailored Advisory</span>
+        <span class="sensora-marquee-sep">✦</span>
+        <span class="sensora-marquee-text">Not sure where you fit?</span>
+        <span class="sensora-marquee-dot">•</span>
+        <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
+        <span class="sensora-marquee-dot">•</span>
+        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+        <span class="sensora-marquee-sep">✦</span>
+      </div>
+      <div class="sensora-marquee-unit">
+        <span class="sensora-marquee-tag">Tailored Advisory</span>
+        <span class="sensora-marquee-sep">✦</span>
+        <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
+        <span class="sensora-marquee-dot">•</span>
+        <span class="sensora-marquee-text">Brand • Experience • Growth</span>
+        <span class="sensora-marquee-dot">•</span>
+        <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
+        <span class="sensora-marquee-sep">✦</span>
+      </div>
+      <div class="sensora-marquee-unit">
+        <span class="sensora-marquee-tag">Tailored Advisory</span>
+        <span class="sensora-marquee-sep">✦</span>
+        <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
+        <span class="sensora-marquee-dot">•</span>
+        <span class="sensora-marquee-text">Let's talk roadmap</span>
+        <span class="sensora-marquee-dot">•</span>
+        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+        <span class="sensora-marquee-sep">✦</span>
+      </div>
       </div>
       <div class="sensora-marquee-group">
-        <div class="sensora-marquee-unit">
-          <span class="sensora-marquee-tag">Tailored Advisory</span>
-          <span class="sensora-marquee-sep">✦</span>
-          <span class="sensora-marquee-text">Not sure where you fit?</span>
-          <span class="sensora-marquee-dot">•</span>
-          <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
-          <span class="sensora-marquee-dot">•</span>
-          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-          <span class="sensora-marquee-sep">✦</span>
-        </div>
-        <div class="sensora-marquee-unit">
-          <span class="sensora-marquee-tag">Tailored Advisory</span>
-          <span class="sensora-marquee-sep">✦</span>
-          <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
-          <span class="sensora-marquee-dot">•</span>
-          <span class="sensora-marquee-text">Brand • Experience • Growth</span>
-          <span class="sensora-marquee-dot">•</span>
-          <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
-          <span class="sensora-marquee-sep">✦</span>
-        </div>
-        <div class="sensora-marquee-unit">
-          <span class="sensora-marquee-tag">Tailored Advisory</span>
-          <span class="sensora-marquee-sep">✦</span>
-          <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
-          <span class="sensora-marquee-dot">•</span>
-          <span class="sensora-marquee-text">Let's talk roadmap</span>
-          <span class="sensora-marquee-dot">•</span>
-          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-          <span class="sensora-marquee-sep">✦</span>
-        </div>
+      <div class="sensora-marquee-unit">
+        <span class="sensora-marquee-tag">Tailored Advisory</span>
+        <span class="sensora-marquee-sep">✦</span>
+        <span class="sensora-marquee-text">Not sure where you fit?</span>
+        <span class="sensora-marquee-dot">•</span>
+        <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
+        <span class="sensora-marquee-dot">•</span>
+        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+        <span class="sensora-marquee-sep">✦</span>
+      </div>
+      <div class="sensora-marquee-unit">
+        <span class="sensora-marquee-tag">Tailored Advisory</span>
+        <span class="sensora-marquee-sep">✦</span>
+        <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
+        <span class="sensora-marquee-dot">•</span>
+        <span class="sensora-marquee-text">Brand • Experience • Growth</span>
+        <span class="sensora-marquee-dot">•</span>
+        <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
+        <span class="sensora-marquee-sep">✦</span>
+      </div>
+      <div class="sensora-marquee-unit">
+        <span class="sensora-marquee-tag">Tailored Advisory</span>
+        <span class="sensora-marquee-sep">✦</span>
+        <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
+        <span class="sensora-marquee-dot">•</span>
+        <span class="sensora-marquee-text">Let's talk roadmap</span>
+        <span class="sensora-marquee-dot">•</span>
+        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+        <span class="sensora-marquee-sep">✦</span>
+      </div>
       </div>
     </div>
   </div>
