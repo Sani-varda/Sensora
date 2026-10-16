@@ -313,7 +313,7 @@
 
 <!-- End Header Section -->
 <!-- Start Hero -->
-<div class="cs-hero cs-style1 cs-bg cs-fixed_bg cs-shape_wrap_1" data-src="assets/img/hero_bg.jpeg" id="home">
+<div class="cs-hero cs-style1 cs-bg cs-fixed_bg cs-shape_wrap_1" style="height: auto; min-height: 100vh; padding-bottom: 90px;" data-src="assets/img/hero_bg.jpeg" id="home">
 <div class="cs-shape_1"></div>
 <div class="cs-shape_1"></div>
 <div class="cs-shape_1"></div>
@@ -411,6 +411,137 @@
 <h1 class="cs-hero_title wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.8s"> Marketing That Engages
           <br/>Every Sense.
         </h1>
+<style>
+.cs-goal_card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 213, 226, 0.9);
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px -2px rgba(112, 11, 30, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.cs-goal_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -4px rgba(112, 11, 30, 0.12);
+  border-color: #f7bbd0;
+}
+.cs-goal_card_cta {
+  background: linear-gradient(135deg, #700b1e 0%, #520514 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -4px rgba(112, 11, 30, 0.35) !important;
+}
+.cs-goal_card_cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -4px rgba(112, 11, 30, 0.5) !important;
+}
+</style>
+
+<div class="cs-client_goals_wrap" style="margin-top: 35px; max-width: 1080px;">
+  <!-- Section Header -->
+  <div class="cs-goals_header" style="margin-bottom: 24px;">
+    <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #700b1e; margin-bottom: 10px;">WHAT CLIENTS COME TO US FOR</span>
+    <h2 style="font-size: clamp(1.4rem, 2.2vw, 2.1rem); font-weight: 600; color: #111827; line-height: 1.3; margin: 0 0 12px 0;">Every business reaches a point where it needs to move forward.</h2>
+    <p style="font-size: 1.05rem; color: #4B5563; line-height: 1.6; margin: 0; max-width: 900px;">You may be building something new, redefining what already exists, or looking for a smarter way to turn attention into growth. Sensora helps you identify what needs to change—and brings together the strategy, creativity, technology and execution to make it happen.</p>
+  </div>
+
+  <!-- 5 Core Tracks + Advisory Card Grid -->
+  <div class="row g-3" style="margin-top: 15px;">
+    <!-- 1. Build a Brand -->
+    <div class="col-lg-4 col-md-6">
+      <div class="cs-goal_card">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: #faedf4; color: #700b1e; font-size: 0.85rem; font-weight: 700;">01</span>
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #9CA3AF;">Track</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #1F2937; margin: 0 0 8px 0; letter-spacing: -0.01em;">Build a Brand</h3>
+          <p style="font-size: 0.9rem; color: #6B7280; line-height: 1.5; margin: 0;">Create a clear, distinctive brand that people recognise, remember and trust.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Reposition a Business -->
+    <div class="col-lg-4 col-md-6">
+      <div class="cs-goal_card">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: #faedf4; color: #700b1e; font-size: 0.85rem; font-weight: 700;">02</span>
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #9CA3AF;">Track</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #1F2937; margin: 0 0 8px 0; letter-spacing: -0.01em;">Reposition a Business</h3>
+          <p style="font-size: 0.9rem; color: #6B7280; line-height: 1.5; margin: 0;">Sharpen your positioning, rethink your identity and make your brand relevant for where the business is going next.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Launch Something New -->
+    <div class="col-lg-4 col-md-6">
+      <div class="cs-goal_card">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: #faedf4; color: #700b1e; font-size: 0.85rem; font-weight: 700;">03</span>
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #9CA3AF;">Track</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #1F2937; margin: 0 0 8px 0; letter-spacing: -0.01em;">Launch Something New</h3>
+          <p style="font-size: 0.9rem; color: #6B7280; line-height: 1.5; margin: 0;">Turn a new product, service, institution or venture into a launch that gets noticed and drives action.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Strengthen Digital Presence -->
+    <div class="col-lg-4 col-md-6">
+      <div class="cs-goal_card">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: #faedf4; color: #700b1e; font-size: 0.85rem; font-weight: 700;">04</span>
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #9CA3AF;">Track</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #1F2937; margin: 0 0 8px 0; letter-spacing: -0.01em;">Strengthen Digital Presence</h3>
+          <p style="font-size: 0.9rem; color: #6B7280; line-height: 1.5; margin: 0;">Build a stronger digital ecosystem that communicates clearly, engages the right audience and supports business goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Generate Growth -->
+    <div class="col-lg-4 col-md-6">
+      <div class="cs-goal_card">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: #faedf4; color: #700b1e; font-size: 0.85rem; font-weight: 700;">05</span>
+            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #9CA3AF;">Track</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #1F2937; margin: 0 0 8px 0; letter-spacing: -0.01em;">Generate Growth</h3>
+          <p style="font-size: 0.9rem; color: #6B7280; line-height: 1.5; margin: 0;">Connect brand, marketing, digital and performance to create sustainable, measurable growth.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Not sure where you fit? -->
+    <div class="col-lg-4 col-md-6">
+      <div class="cs-goal_card cs-goal_card_cta">
+        <div>
+          <span style="display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #fce7ef; margin-bottom: 10px;">Tailored Advisory</span>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0 0 8px 0; letter-spacing: -0.01em;">Not sure where you fit?</h3>
+          <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.88); line-height: 1.5; margin: 0;">Tell us what you're trying to achieve. We'll help you find the right starting point.</p>
+        </div>
+        <div style="margin-top: 18px;">
+          <a href="contact.html" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #ffffff; text-decoration: none; padding: 8px 18px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 9999px; transition: background 0.2s ease;">
+            <span>Start a Conversation</span>
+            <span style="font-size: 1rem;">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 </div>
 <div class="cs-hero_social_wrap cs-primary_font cs-primary_color">
