@@ -4649,7 +4649,7 @@ label {
     transform: translate(-50%, -50%);
     height: 2px;
     width: 10px;
-    background-color: rgba(254, 254, 254, 0.7);
+    background-color: #000000;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
@@ -4687,6 +4687,8 @@ label {
   .cs-nav .cs-nav_list a {
     display: block;
     padding: 8px 20px;
+    color: #000000;
+    font-weight: 600;
   }
 
   .cs-nav .menu-item-has-children {
@@ -4709,7 +4711,7 @@ label {
   .cs-munu_toggle span:after {
     width: 100%;
     height: 2px;
-    background-color: currentColor;
+    background-color: #000000;
     display: block;
   }
 
