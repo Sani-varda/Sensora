@@ -85,6 +85,72 @@ h1, h2, h3, h4, h5, h6 {
   color: #E06196 !important;
 }
 
+/* Mobile Navigation Dropdown - Pink Background & Black Text */
+@media screen and (max-width: 1199px) {
+  .cs-nav .cs-nav_list {
+    background-color: #fce1e8 !important;
+    background: linear-gradient(180deg, #fce1e8 0%, #faedf4 100%) !important;
+    border-top: 1px solid rgba(112, 11, 30, 0.15) !important;
+    border-bottom: 1px solid rgba(112, 11, 30, 0.15) !important;
+    box-shadow: 0 16px 36px rgba(112, 11, 30, 0.12) !important;
+    padding: 12px 0 !important;
+  }
+
+  .cs-nav .cs-nav_list a,
+  .cs-nav .cs-nav_list > li > a,
+  .cs-nav .cs-nav_list ul li a {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding: 12px 25px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+  }
+
+  .cs-nav .cs-nav_list a:hover,
+  .cs-nav .cs-nav_list > li > a:hover,
+  .cs-nav .cs-nav_list ul li a:hover {
+    color: #700b1e !important;
+    background-color: rgba(255, 255, 255, 0.45) !important;
+  }
+
+  .cs-nav .cs-nav_list > li:not(:last-child) {
+    border-bottom: 1px solid rgba(112, 11, 30, 0.08) !important;
+  }
+
+  /* Submenus on Mobile */
+  .cs-nav .cs-nav_list ul,
+  .cs-nav .cs-nav_list .cs-mega_wrapper {
+    background-color: #f8d5e1 !important;
+    border-top: 1px solid rgba(112, 11, 30, 0.1) !important;
+    border-bottom: 1px solid rgba(112, 11, 30, 0.1) !important;
+    box-shadow: none !important;
+    padding: 6px 0 !important;
+  }
+
+  .cs-nav .cs-nav_list ul a {
+    color: #000000 !important;
+    font-weight: 600 !important;
+    padding-left: 40px !important;
+  }
+
+  .cs-nav .cs-nav_list ul a:hover {
+    color: #700b1e !important;
+  }
+
+  /* Mobile Dropdown Expand/Collapse Toggles (+ / -) */
+  .cs-munu_dropdown_toggle:before,
+  .cs-munu_dropdown_toggle:after {
+    background-color: #000000 !important;
+  }
+
+  /* Mobile Menu Hamburger Toggle */
+  .cs-munu_toggle span,
+  .cs-munu_toggle span:before,
+  .cs-munu_toggle span:after {
+    background-color: #000000 !important;
+  }
+}
+
 .cs-toolbox .cs-icon_btn span span {
   background-color: #0F141C !important;
 }
