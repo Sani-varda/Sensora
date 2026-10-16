@@ -411,191 +411,179 @@
 <h1 class="cs-hero_title wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.8s"> Marketing That Engages
           <br/>Every Sense.
         </h1>
+</div>
+</div>
+<div class="cs-hero_social_wrap cs-primary_font cs-primary_color">
+<div class="cs-hero_social_title">Follow Us</div>
+<ul class="cs-hero_social_links">
+<li><a href="https://www.instagram.com/sensora.official/" target="_blank">Instagram</a></li>
+<li><a href="https://www.threads.com/@sensora.official" target="_blank">Threads</a></li>
+<li><a href="https://www.linkedin.com/company/sensoramarketing" target="_blank">LinkedIn</a></li>
+<li><a href="mailto:hello@sensora.co.in">hello@sensora.co.in</a></li>
+<li><a href="tel:+918356918580">+91 8356918580</a></li>
+</ul>
+</div>
+<a class="cs-down_btn" href="#client-goals"></a>
+</div>
+<!-- End Hero -->
+
 <style>
-/* Bento Grid Responsive Container */
-.fui-bento-grid-wrap {
-  margin-top: 35px;
-  max-width: 1140px;
-  width: 100%;
+/* WHAT CLIENTS COME TO US FOR - Native HTML Integration */
+.cs-client_goals_section {
+  position: relative;
+  background-color: #ffffff;
+  padding-top: 85px;
+  padding-bottom: 0;
+  overflow: hidden;
 }
-.fui-bento-grid {
+.cs-goals-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-  margin-top: 24px;
+  gap: 22px;
 }
-.fui-bento-col-3 {
+.cs-goal-col-3 {
   grid-column: span 3;
 }
-.fui-bento-col-2 {
+.cs-goal-col-2 {
   grid-column: span 2;
 }
 
 @media (max-width: 991px) {
-  .fui-bento-grid {
+  .cs-goals-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-  .fui-bento-col-3 {
+  .cs-goal-col-3 {
     grid-column: span 2;
   }
-  .fui-bento-col-2 {
+  .cs-goal-col-2 {
     grid-column: span 1;
   }
 }
 @media (max-width: 640px) {
-  .fui-bento-grid {
+  .cs-goals-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .fui-bento-col-3,
-  .fui-bento-col-2 {
+  .cs-goal-col-3,
+  .cs-goal-col-2 {
     grid-column: span 1;
   }
 }
 
-/* Bento Card Design */
-.fui-bento-card {
+.cs-goal-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 20px;
-  background-color: #0b0507;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  text-decoration: none !important;
-  color: #ffffff !important;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-}
-.fui-bento-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px -8px rgba(112, 11, 30, 0.35), 0 0 24px rgba(255, 255, 255, 0.1);
-  border-color: rgba(245, 181, 191, 0.45);
-}
-
-/* Graphic Area with Image & Overlay */
-.fui-bento-graphic {
-  position: relative;
-  height: 330px;
-  width: 100%;
-  overflow: hidden;
-}
-.fui-bento-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.8) contrast(1.15);
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.fui-bento-card:hover .fui-bento-bg-img {
-  transform: scale(1.08);
-}
-.fui-bento-fade-top {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 45%, transparent 100%);
-  pointer-events: none;
-}
-.fui-bento-fade-bottom {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(11, 5, 7, 0.98) 0%, rgba(11, 5, 7, 0.75) 50%, transparent 100%);
-  pointer-events: none;
-}
-
-/* Floating Icon Badge */
-.fui-bento-icon-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #f5b5bf;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.fui-bento-card:hover .fui-bento-icon-badge {
-  transform: scale(1.12);
-  border-color: rgba(245, 181, 191, 0.6);
-}
-
-/* Frosted Content Panel */
-.fui-bento-content {
-  position: relative;
-  z-index: 10;
-  margin-top: -125px;
-  padding: 22px 26px;
-  min-height: 160px;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  background: linear-gradient(180deg, rgba(11, 5, 7, 0.65) 0%, rgba(11, 5, 7, 0.94) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(112, 11, 30, 0.12);
+  padding: 30px 28px 24px 28px;
+  box-shadow: 0 4px 20px -2px rgba(112, 11, 30, 0.05);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background-color 0.35s ease;
+  min-height: 225px;
+  text-decoration: none !important;
 }
-.fui-bento-eyebrow {
-  display: inline-block;
+.cs-goal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px -6px rgba(112, 11, 30, 0.14);
+  border-color: rgba(224, 97, 150, 0.5);
+  background-color: #fdfafc;
+}
+
+.cs-goal-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.cs-goal-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-goal-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #faedf4;
+  color: #700b1e;
+  font-family: monospace, ui-monospace, monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.cs-goal-tag {
   font-family: monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #f5b5bf;
-  margin-bottom: 6px;
+  color: #871126;
 }
-.fui-bento-title {
+.cs-goal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #fdf2f5;
+  color: #700b1e;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.cs-goal-card:hover .cs-goal-icon {
+  transform: scale(1.1);
+  background: #700b1e;
+  color: #ffffff;
+}
+
+.cs-goal-title {
+  font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0F141C;
   line-height: 1.3;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
   letter-spacing: -0.01em;
   transition: color 0.3s ease;
 }
-.fui-bento-card:hover .fui-bento-title {
-  color: #fde8f0;
+.cs-goal-card:hover .cs-goal-title {
+  color: #700b1e;
 }
-.fui-bento-desc {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.55;
-  margin: 0 0 12px 0;
+.cs-goal-desc {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.92rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin: 0;
 }
-.fui-bento-action {
+
+.cs-goal-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(112, 11, 30, 0.08);
   font-family: monospace, ui-monospace, monospace;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245, 181, 191, 0.85);
+  color: #700b1e;
+  text-decoration: none !important;
   transition: color 0.3s ease;
 }
-.fui-bento-card:hover .fui-bento-action {
-  color: #ffffff;
-}
-.fui-bento-arrow {
+.cs-goal-arrow {
   display: inline-block;
+  font-size: 0.95rem;
   transition: transform 0.3s ease;
 }
-.fui-bento-card:hover .fui-bento-arrow {
+.cs-goal-card:hover .cs-goal-arrow {
   transform: translateX(4px);
 }
 
@@ -607,13 +595,13 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: 36px;
+  margin-top: 45px;
   background: linear-gradient(90deg, #fce1e8 0%, #fbb7ce 50%, #fce1e8 100%);
   border-top: 1px solid rgba(112, 11, 30, 0.2);
   border-bottom: 1px solid rgba(112, 11, 30, 0.2);
   padding: 16px 0;
   overflow: hidden;
-  box-shadow: 0 8px 24px -4px rgba(112, 11, 30, 0.12);
+  box-shadow: 0 8px 24px -4px rgba(112, 11, 30, 0.1);
   display: flex;
   align-items: center;
 }
@@ -698,217 +686,203 @@
 }
 </style>
 
-<div class="fui-bento-grid-wrap">
-  <!-- Section Header -->
-  <div style="margin-bottom: 24px;">
-    <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #700b1e; margin-bottom: 10px; font-family: monospace, ui-monospace;">WHAT CLIENTS COME TO US FOR</span>
-    <h2 style="font-size: clamp(1.4rem, 2.2vw, 2.1rem); font-weight: 600; color: #111827; line-height: 1.3; margin: 0 0 12px 0;">Every business reaches a point where it needs to move forward.</h2>
-    <p style="font-size: 1.05rem; color: #4B5563; line-height: 1.6; margin: 0; max-width: 900px;">You may be building something new, redefining what already exists, or looking for a smarter way to turn attention into growth. Sensora helps you identify what needs to change—and brings together the strategy, creativity, technology and execution to make it happen.</p>
-  </div>
+<!-- Start What Clients Come To Us For -->
+<section id="client-goals" class="cs-client_goals_section">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="cs-section_heading cs-style1 text-left" style="margin-bottom: 40px;">
+      <h3 class="cs-section_subtitle" style="color: #700b1e; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;">
+        WHAT CLIENTS COME TO US FOR
+      </h3>
+      <h2 class="cs-section_title wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s" style="font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 700; color: #0F141C; line-height: 1.25; margin: 10px 0 16px 0;">
+        Every business reaches a point where it needs to move forward.
+      </h2>
+      <p style="font-size: 1.05rem; color: #4B5563; line-height: 1.65; margin: 0; max-width: 900px;">
+        You may be building something new, redefining what already exists, or looking for a smarter way to turn attention into growth. Sensora helps you identify what needs to change—and brings together the strategy, creativity, technology and execution to make it happen.
+      </p>
+    </div>
 
-  <!-- Bento Grid (6 cols, 2 rows) -->
-  <div class="fui-bento-grid">
-    <!-- Card 1: Build a Brand (3 Cols) -->
-    <a href="contact.html" class="fui-bento-card fui-bento-col-3">
-      <div class="fui-bento-graphic">
-        <div class="fui-bento-bg-img" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="fui-bento-fade-top"></div>
-        <div class="fui-bento-fade-bottom"></div>
-        <div class="fui-bento-icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-        </div>
-      </div>
-      <div class="fui-bento-content">
+    <!-- 5 Bento Cards (No Images, Clean & Highly Integrated) -->
+    <div class="cs-goals-grid">
+      <!-- 1. Build a Brand (3 Cols) -->
+      <a href="contact.html" class="cs-goal-card cs-goal-col-3">
         <div>
-          <span class="fui-bento-eyebrow">Track 01 • Foundation</span>
-          <h3 class="fui-bento-title">Build a Brand</h3>
-          <p class="fui-bento-desc">Create a clear, distinctive brand that people recognise, remember and trust.</p>
+          <div class="cs-goal-card-top">
+            <div class="cs-goal-badge-wrap">
+              <span class="cs-goal-num-badge">01</span>
+              <span class="cs-goal-tag">Foundation</span>
+            </div>
+            <div class="cs-goal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+          </div>
+          <h3 class="cs-goal-title">Build a Brand</h3>
+          <p class="cs-goal-desc">Create a clear, distinctive brand that people recognise, remember and trust.</p>
         </div>
-        <div class="fui-bento-action">
+        <div class="cs-goal-footer">
           <span>Explore Track</span>
-          <span class="fui-bento-arrow">&rarr;</span>
+          <span class="cs-goal-arrow">&rarr;</span>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Card 2: Reposition a Business (3 Cols) -->
-    <a href="contact.html" class="fui-bento-card fui-bento-col-3">
-      <div class="fui-bento-graphic">
-        <div class="fui-bento-bg-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="fui-bento-fade-top"></div>
-        <div class="fui-bento-fade-bottom"></div>
-        <div class="fui-bento-icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
-        </div>
-      </div>
-      <div class="fui-bento-content">
+      <!-- 2. Reposition a Business (3 Cols) -->
+      <a href="contact.html" class="cs-goal-card cs-goal-col-3">
         <div>
-          <span class="fui-bento-eyebrow">Track 02 • Evolution</span>
-          <h3 class="fui-bento-title">Reposition a Business</h3>
-          <p class="fui-bento-desc">Sharpen your positioning, rethink your identity and make your brand relevant for where the business is going next.</p>
+          <div class="cs-goal-card-top">
+            <div class="cs-goal-badge-wrap">
+              <span class="cs-goal-num-badge">02</span>
+              <span class="cs-goal-tag">Evolution</span>
+            </div>
+            <div class="cs-goal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </div>
+          </div>
+          <h3 class="cs-goal-title">Reposition a Business</h3>
+          <p class="cs-goal-desc">Sharpen your positioning, rethink your identity and make your brand relevant for where the business is going next.</p>
         </div>
-        <div class="fui-bento-action">
+        <div class="cs-goal-footer">
           <span>Explore Track</span>
-          <span class="fui-bento-arrow">&rarr;</span>
+          <span class="cs-goal-arrow">&rarr;</span>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Card 3: Launch Something New (2 Cols) -->
-    <a href="contact.html" class="fui-bento-card fui-bento-col-2">
-      <div class="fui-bento-graphic">
-        <div class="fui-bento-bg-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="fui-bento-fade-top"></div>
-        <div class="fui-bento-fade-bottom"></div>
-        <div class="fui-bento-icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-        </div>
-      </div>
-      <div class="fui-bento-content">
+      <!-- 3. Launch Something New (2 Cols) -->
+      <a href="contact.html" class="cs-goal-card cs-goal-col-2">
         <div>
-          <span class="fui-bento-eyebrow">Track 03 • Launch</span>
-          <h3 class="fui-bento-title">Launch Something New</h3>
-          <p class="fui-bento-desc">Turn a new product, service, institution or venture into a launch that gets noticed and drives action.</p>
+          <div class="cs-goal-card-top">
+            <div class="cs-goal-badge-wrap">
+              <span class="cs-goal-num-badge">03</span>
+              <span class="cs-goal-tag">Launch</span>
+            </div>
+            <div class="cs-goal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            </div>
+          </div>
+          <h3 class="cs-goal-title">Launch Something New</h3>
+          <p class="cs-goal-desc">Turn a new product, service, institution or venture into a launch that gets noticed and drives action.</p>
         </div>
-        <div class="fui-bento-action">
+        <div class="cs-goal-footer">
           <span>Explore Track</span>
-          <span class="fui-bento-arrow">&rarr;</span>
+          <span class="cs-goal-arrow">&rarr;</span>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Card 4: Strengthen Digital Presence (2 Cols) -->
-    <a href="contact.html" class="fui-bento-card fui-bento-col-2">
-      <div class="fui-bento-graphic">
-        <div class="fui-bento-bg-img" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="fui-bento-fade-top"></div>
-        <div class="fui-bento-fade-bottom"></div>
-        <div class="fui-bento-icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-        </div>
-      </div>
-      <div class="fui-bento-content">
+      <!-- 4. Strengthen Digital Presence (2 Cols) -->
+      <a href="contact.html" class="cs-goal-card cs-goal-col-2">
         <div>
-          <span class="fui-bento-eyebrow">Track 04 • Digital</span>
-          <h3 class="fui-bento-title">Strengthen Digital Presence</h3>
-          <p class="fui-bento-desc">Build a stronger digital ecosystem that communicates clearly, engages the right audience and supports business goals.</p>
+          <div class="cs-goal-card-top">
+            <div class="cs-goal-badge-wrap">
+              <span class="cs-goal-num-badge">04</span>
+              <span class="cs-goal-tag">Digital</span>
+            </div>
+            <div class="cs-goal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+          </div>
+          <h3 class="cs-goal-title">Strengthen Digital Presence</h3>
+          <p class="cs-goal-desc">Build a stronger digital ecosystem that communicates clearly, engages the right audience and supports business goals.</p>
         </div>
-        <div class="fui-bento-action">
+        <div class="cs-goal-footer">
           <span>Explore Track</span>
-          <span class="fui-bento-arrow">&rarr;</span>
+          <span class="cs-goal-arrow">&rarr;</span>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Card 5: Generate Growth (2 Cols) -->
-    <a href="contact.html" class="fui-bento-card fui-bento-col-2">
-      <div class="fui-bento-graphic">
-        <div class="fui-bento-bg-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="fui-bento-fade-top"></div>
-        <div class="fui-bento-fade-bottom"></div>
-        <div class="fui-bento-icon-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-      </div>
-      <div class="fui-bento-content">
+      <!-- 5. Generate Growth (2 Cols) -->
+      <a href="contact.html" class="cs-goal-card cs-goal-col-2">
         <div>
-          <span class="fui-bento-eyebrow">Track 05 • Performance</span>
-          <h3 class="fui-bento-title">Generate Growth</h3>
-          <p class="fui-bento-desc">Connect brand, marketing, digital and performance to create sustainable momentum and scalable commercial results.</p>
+          <div class="cs-goal-card-top">
+            <div class="cs-goal-badge-wrap">
+              <span class="cs-goal-num-badge">05</span>
+              <span class="cs-goal-tag">Performance</span>
+            </div>
+            <div class="cs-goal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+          </div>
+          <h3 class="cs-goal-title">Generate Growth</h3>
+          <p class="cs-goal-desc">Connect brand, marketing, digital and performance to create sustainable momentum and commercial results.</p>
         </div>
-        <div class="fui-bento-action">
+        <div class="cs-goal-footer">
           <span>Explore Track</span>
-          <span class="fui-bento-arrow">&rarr;</span>
+          <span class="cs-goal-arrow">&rarr;</span>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 
   <!-- Full-Screen Pink Moving Marquee: Tailored Advisory -->
   <div class="sensora-marquee-fullwidth">
     <div class="sensora-marquee-track">
-    <div class="sensora-marquee-group">
-      <div class="sensora-marquee-unit">
-        <span class="sensora-marquee-tag">Tailored Advisory</span>
-        <span class="sensora-marquee-sep">✦</span>
-        <span class="sensora-marquee-text">Not sure where you fit?</span>
-        <span class="sensora-marquee-dot">•</span>
-        <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
-        <span class="sensora-marquee-dot">•</span>
-        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-        <span class="sensora-marquee-sep">✦</span>
+      <div class="sensora-marquee-group">
+        <div class="sensora-marquee-unit">
+          <span class="sensora-marquee-tag">Tailored Advisory</span>
+          <span class="sensora-marquee-sep">✦</span>
+          <span class="sensora-marquee-text">Not sure where you fit?</span>
+          <span class="sensora-marquee-dot">•</span>
+          <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
+          <span class="sensora-marquee-dot">•</span>
+          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+          <span class="sensora-marquee-sep">✦</span>
+        </div>
+        <div class="sensora-marquee-unit">
+          <span class="sensora-marquee-tag">Tailored Advisory</span>
+          <span class="sensora-marquee-sep">✦</span>
+          <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
+          <span class="sensora-marquee-dot">•</span>
+          <span class="sensora-marquee-text">Brand • Experience • Growth</span>
+          <span class="sensora-marquee-dot">•</span>
+          <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
+          <span class="sensora-marquee-sep">✦</span>
+        </div>
+        <div class="sensora-marquee-unit">
+          <span class="sensora-marquee-tag">Tailored Advisory</span>
+          <span class="sensora-marquee-sep">✦</span>
+          <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
+          <span class="sensora-marquee-dot">•</span>
+          <span class="sensora-marquee-text">Let's talk roadmap</span>
+          <span class="sensora-marquee-dot">•</span>
+          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+          <span class="sensora-marquee-sep">✦</span>
+        </div>
       </div>
-      <div class="sensora-marquee-unit">
-        <span class="sensora-marquee-tag">Tailored Advisory</span>
-        <span class="sensora-marquee-sep">✦</span>
-        <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
-        <span class="sensora-marquee-dot">•</span>
-        <span class="sensora-marquee-text">Brand • Experience • Growth</span>
-        <span class="sensora-marquee-dot">•</span>
-        <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
-        <span class="sensora-marquee-sep">✦</span>
+      <div class="sensora-marquee-group">
+        <div class="sensora-marquee-unit">
+          <span class="sensora-marquee-tag">Tailored Advisory</span>
+          <span class="sensora-marquee-sep">✦</span>
+          <span class="sensora-marquee-text">Not sure where you fit?</span>
+          <span class="sensora-marquee-dot">•</span>
+          <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
+          <span class="sensora-marquee-dot">•</span>
+          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+          <span class="sensora-marquee-sep">✦</span>
+        </div>
+        <div class="sensora-marquee-unit">
+          <span class="sensora-marquee-tag">Tailored Advisory</span>
+          <span class="sensora-marquee-sep">✦</span>
+          <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
+          <span class="sensora-marquee-dot">•</span>
+          <span class="sensora-marquee-text">Brand • Experience • Growth</span>
+          <span class="sensora-marquee-dot">•</span>
+          <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
+          <span class="sensora-marquee-sep">✦</span>
+        </div>
+        <div class="sensora-marquee-unit">
+          <span class="sensora-marquee-tag">Tailored Advisory</span>
+          <span class="sensora-marquee-sep">✦</span>
+          <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
+          <span class="sensora-marquee-dot">•</span>
+          <span class="sensora-marquee-text">Let's talk roadmap</span>
+          <span class="sensora-marquee-dot">•</span>
+          <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
+          <span class="sensora-marquee-sep">✦</span>
+        </div>
       </div>
-      <div class="sensora-marquee-unit">
-        <span class="sensora-marquee-tag">Tailored Advisory</span>
-        <span class="sensora-marquee-sep">✦</span>
-        <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
-        <span class="sensora-marquee-dot">•</span>
-        <span class="sensora-marquee-text">Let's talk roadmap</span>
-        <span class="sensora-marquee-dot">•</span>
-        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-        <span class="sensora-marquee-sep">✦</span>
-      </div>
-    </div>
-    <div class="sensora-marquee-group">
-      <div class="sensora-marquee-unit">
-        <span class="sensora-marquee-tag">Tailored Advisory</span>
-        <span class="sensora-marquee-sep">✦</span>
-        <span class="sensora-marquee-text">Not sure where you fit?</span>
-        <span class="sensora-marquee-dot">•</span>
-        <span class="sensora-marquee-text">Tell us what you're trying to achieve</span>
-        <span class="sensora-marquee-dot">•</span>
-        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-        <span class="sensora-marquee-sep">✦</span>
-      </div>
-      <div class="sensora-marquee-unit">
-        <span class="sensora-marquee-tag">Tailored Advisory</span>
-        <span class="sensora-marquee-sep">✦</span>
-        <span class="sensora-marquee-text">We diagnose hurdles & identify starting points</span>
-        <span class="sensora-marquee-dot">•</span>
-        <span class="sensora-marquee-text">Brand • Experience • Growth</span>
-        <span class="sensora-marquee-dot">•</span>
-        <a href="contact.html" class="sensora-marquee-btn"><span>Schedule Call</span> <span>&rarr;</span></a>
-        <span class="sensora-marquee-sep">✦</span>
-      </div>
-      <div class="sensora-marquee-unit">
-        <span class="sensora-marquee-tag">Tailored Advisory</span>
-        <span class="sensora-marquee-sep">✦</span>
-        <span class="sensora-marquee-text">Strategy • Creativity • Technology • Execution</span>
-        <span class="sensora-marquee-dot">•</span>
-        <span class="sensora-marquee-text">Let's talk roadmap</span>
-        <span class="sensora-marquee-dot">•</span>
-        <a href="contact.html" class="sensora-marquee-btn"><span>Start a Conversation</span> <span>&rarr;</span></a>
-        <span class="sensora-marquee-sep">✦</span>
-      </div>
-    </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-<div class="cs-hero_social_wrap cs-primary_font cs-primary_color">
-<div class="cs-hero_social_title">Follow Us</div>
-<ul class="cs-hero_social_links">
-<li><a href="https://www.instagram.com/sensora.official/" target="_blank">Instagram</a></li>
-<li><a href="https://www.threads.com/@sensora.official" target="_blank">Threads</a></li>
-<li><a href="https://www.linkedin.com/company/sensoramarketing" target="_blank">LinkedIn</a></li>
-<li><a href="mailto:hello@sensora.co.in">hello@sensora.co.in</a></li>
-<li><a href="tel:+918356918580">+91 8356918580</a></li>
-</ul>
-</div>
-<a class="cs-down_btn" href="#projects"></a>
-</div>
-<!-- End Hero -->
+</section>
+<!-- End What Clients Come To Us For -->
+
 <!-- Start Latest Project -->
 <section id="projects">
 <div class="container">
